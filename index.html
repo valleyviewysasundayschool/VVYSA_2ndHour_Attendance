@@ -1,0 +1,2647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2nd Hour — Valley View Attendance</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="2nd Hour">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#232323">
+
+  <!-- PWA Manifest & Home Screen Icons (GitHub Pages + Inline Data URI Fallback) -->
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
+  <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAABmJLR0QA/wD/AP+gvaeTAAAPSElEQVR4nO2de1RUdR7Af3eY94On4MCAoCDIAD5AQUERn3gAwWdm6ZaZqOWj2nN2O7un057dtjpnz9lMNC3zkZXVVruraSk+ExN8gaspgolaDirK2xGGmWH2Dwov985v5oJz5z74fo5/4I8f934dP/zeD2L+k28jAHCGhOsAAP4CcgBYQA4AC8gBYAE5ACwgB4AF5ACwgBwAFpADwAJyAFhADgALyAFgATkALCAHgAXkALCAHAAWkAPAAnIAWEAOAAvIAWABOQAsIAeABeQAsIAcABaByREYoJVICK6j6C9IuQ6gdyQlDqq/3+IgiBs368xmC9fhiByBlRzl568PT4pcvTw7Mz2e61jEj8DkaG1tO3T0okolz8tJ5joW8SMwORBCDY1mh8NhsdgUcoHViYJDeHLYbPamJnPZ6WqVWsF1LCJHeHIghOobH8jlsqYmM9eBiBxByvHzz/d/vPwL11GIH+HJIZNJh0brgwfouA5E/AhPDj9fVXh4UGxMKNeBiB/hyXG/vvXMuWtnymu4DkT8CE8OhJBSKdNplVxHIX4EKYdGo/TVqbiOQvwIUg6tRunnp+Y6CvEjSDl0Wig5vIHw5JBICJVK7usLJQfrCE8OtVpBEIQfyME+wpOjq5/i6wvVCusITw6tRokQUipkMCvLNsKTQ6P5dYQDCg+2EZ4c3cNfvjpodrCL8OTQQsnhLYQnh6a75IAOC8sITw6d5tcFYP4gB8sITw4tlBzeQnhyPOqt6GBill2EJ4cOSg5vITw5oLfiNYQnhwYapN5CYHIo5FKZ7NdRc5VKIZP5cBuPuBGYHOSqhCCQDgZJ2URIckSEB/3j74vIKZkZw7gKpj8gJDkkBEEQPQ7nyMkepVLKuYpH9AhGDqnUZ1icgZKokEtDgn05iac/IBg5JmTEP/VEBj09Jlrv/WD6CYKRA8fcgjRYbMwSgpdDo1FkjI3jOgpxIoCVdosXZk6dlOgiQ2iov9eC6VcIoOQYEORmQ/241FholrKBAOSQSd0EKZdLn1mU5ZVY+hcCkON+Q6vbPInx4elpsV4Ipl8hADms1k4m2aBZ6nEEIAdD7J2MHAKYIyI57CCHhxGPHJ2dDq5DEBtikgNKDg8jHjnsUHJ4GhHJAW0OTyMeOaBa8Ti8nlsJDNQNTxxkCAtgktkB1Yqn4bUcg8KDliyayDAzVCseRzzVitEYAce5eBbxfJr6EL8F89J37jrOMD9BIAefKiKdTvXEvIyhMaF37jZ+9XXpLVO902wEgaZOHjFhgtFu7zxy9GLJicvshcRTOZY+Myk4yHdgSO8m4idPTCw/f53hhQr+/trGxgd9is7zqFXyV/8wxxAWiBDS6/1jYkL/9OdPWlrb6DlnF4zNnzmm6+ulS6bY7faTpVUsRcXHaoUgiPS02PhhhsDA3l2NQBAod8YohplDB/JliZCPj2TVi7ldZnSh1SiTk6PpOVOSo2fmjSGnTJyQwF5gfJRDpZRRtiAwJyw0QMdsSelAfshBEGjJM5ON8eGUdHrnKywscNnSaZQPhtWKkY9yyOTSPl8e6++nWb1ihlTqZpukVOrDkxtb8memjs+g3nTZ0tp2rvwaOUWtkq95MUeplFFyHvv+Enux8VGO5uaHNlvf+6VxQ0Nzske6zqNQSAP8tX1+hacYmxY7Kz+Nkmiz2Tdt3v/A3N6dQhBE4bJsvZ463nOytKrsFFsNDsRPOR4frdZNzaJSyAL8Od5nGxdnWLpkKrWacKBtOw5XXrlFTpwza+zIEVGUH795896OnUdYjVCccrhFoZQH+Gs4DCBUH7B2VS79lID//LeM0vtIHjUkL3c0JVtLy8N3i/Z2dNhYDbKfyqFUyAICOKtWtFrlS2vy1LSrT0tOVO7Ze4acotf70xuhdnvne5v3N7DfD++vcihlCrlUpeJgE7ZcLn1pTR69r3SlyvTRx0fJKUqlbO2qPHqQuz47fqXKxG6UCKF+K4dCIUMIBXq98CAIovD56THR1NsLa2sb1hfttdns5JwrCmeEhjpphB4+epH1QBFC/VYOpUKGEArw+nVPTy4YPzqFOrrV1Gz+57o9D9s6yIlcNULJ9FM5FEo5Qsjfu23SrImJ2dOofWyLxbq+aN/9+h57czhshJLpp3IoFVKEkDfbpMOTohY/TV1+0NnpeH9Lcc31u+REbhuhZPqpHArvViuRkcEvrMj28aF+2p99XlJe0eOCXM4boWR4OivLNhq1AiFEH3PsRibzyRxvDAsLvHGz7oeTV5jseyAIlJYaNzRGX1fX/H3J5fb2X9sQA4J0r6zNV9KOp9p/oOLg4f/1fAKxcrmTRmjJiUqvNULJ8EiOyEEDXn2loOtrVs+QjB9mmDopCSGUEB+eYIy4RJvil0iI379c0H3K1JjRMUUbv7Na3VT2i5/Omjwpqevr8eONb779VVtbh1olf/mlfPpFp2fPXfviyx8oibNnpY0YHkVJrLl+d+cnxxj+0zwLj6oVpVKuViu6/jzmowxhgS6m7nRaVfd342nnjCGEjPER5PPHhidFrVmV033+qVMCA7STsh4dIhIRHrT6hRyFQkaZi+/iWs2dDz4sdvRca5SSHD0zdwwlZ0vLww0bv3XrJUvwSA4PbllLjA8vfG6qUz+SRw5eMHfco5zGCDltcSH9Fz0pMdK1HzpfFWWZgdEY8dYbT9Pn4uvuNb+7ntrpcDodb7d3btz0nZcboWR4JIdnJzvGpQ5dtsSJH2GhAeTTYAZHBqfTtudXXjHRf1ld+2EyNTTQjoqgL1Yymy3vrPuGssRLhZmO3/V5SVV1rdPXeQceyZEz3c08e29JTxu6bMkUcsrAEL/IiAGUbPROREND69btR+glmQs/bDb75g+KrVY7/VvdWK32oo37bt9pJCcSBLHc2XR8yYnKw0cuuHiaF+CRHGyUn2mjY8h/XbxwQmrPFIRQyogouh9lp6q2bC3ulR/VV2u37TiMW7TscKBtOw7Ru6OzC9LoI6EcNkLJ8EgOiYSVYMgVudPJlARjxNyCVHp6aVl1b/0oLasqPnTeaRjf7T9XWlZNSaSvCUVcN0LJ8EqOPi4NdIGPjyQzw+g2WyhmwKO3fvj6qpNHDnH6qBEjBlOGtvjZCCXDIzn6vKjYBZ2djsYm9x80eTqUAnM/FArZ2tW5wZhzDQ1hgateyOmuv3jbCCXDIzkkzORobn7IvNNr6bBd+PFn9692WaMx8YMgiMLnp0UPcXXWdoIx4neLshC/G6FkeDRC6taNO3eb1m/ab6pt0GqVK5dOS0yI8NSr3dZopWXVdrtj+bLplKZrUmLk2tW56zfsmzt7bIqznSYUJmYm3L3bpFTJnU7Hf/zpsd7FzTI8KjkId/9D2z8+ZqptQAg9eND+3ofFFgaT1wTBqCnDJM/pM1c/3HaQXn4kJgz66+sLs6dTN1NZLNZPdx2nd27nz0t3OhLq5el4JvCo5HBdtjsc6KeaR1PbZrOltrZhcFSI62cqFbLtm1cihKxWm9Vqp89+deF6aLwbXPmh11PX/HXNxZdX1LS0tq0ozCYXivSmFSfT8UzgU8nhsl4hiB7nXPv4SILcHXtNRiaTqtUKXAkRH2fQh/gxeQ6u/KDw6WfHu+biT52u3v3NadeZd31e4v3peCZwU3K8+foCgyGotz+1cH7GhvcPWK02gkAFeaM9eJOGRELMzB29ZfthJplx5Uc3+w9UkNuVu/ecCgn2Sx/n/Azdk6VVvGqEkvFJSJzq5VdKpT5zClIZluRk9AP9x6XFRkWG5OemjB0z1LNRGcICi49ccNGnJWOqbbh3rzl5VDS9tDt77tr2j6jLPC9cvBEXa6Cf8F9z/W7Rxm95e2AVB9VKRHhQnyflgwfoMsbGRg0K9mxICCEfH0nKyMHM85eWVW/+4ADlOKHrN+q2bD3ooA2hW632og377vScVeHPSCgODuTw/oYAhix+KjMMvzaMzukzV7dsPdTdHzHVNryzbo/FYnWa+YG5fV3Rvu5WZ1tbR9F7fBkJxUHMf/JtL79yTn5qQR51aTVPuGWq3/XlSYRQ7e1Ghke7hIT4jUiKan3QXl5xzW1fVKWSj06JlkqlFRU1Tc1mD0TMJhzIMbcgLT83xcsv7S0mU/1f3vqabwMPXoaDauXhQ4v3X9pbDIagRQvGcx0Fx7DbldVoFFm0c4nihlI3A/KTiROMl6+Yys5c5ToQzmBXjvg4wxNzxrL6ClZ5dvHE6zfr7tY1cx0IN7Bbrfh7etfQ7TtN/959evfes01N3mjNqZTyFwuzWd0nwWfYHQRLTIgwDqMuv+4zdfdbXv/bvy5V3qqsMpWd+WliRnwfRtJ6i7+fWqVWMJn3Fx8slhzDYsPm0A68ehwqzl9v/20UoanJfLnn2UjsMTUrKbk342OigUU5GpvMnlrb9cut+j++tqut5yEFtbebXnl156VK1hUhCLTs2ckDAnk6dsceLMpBH0XuM3v3l9c3OBmSqm94sMMrq7TVasXKQuxMm1gRxr/WRfPz3n33t856hJgh+rmzPFlL8h9hyPGYbNt59Gx5jft87siZPiopYdDjP0co8EWO4z9Usrfq+vsTlecv3MB912SqZ7LiECFEEGj5c1O8fB4Qh/BFji++Kj1wmIM1L21tHa+98WUx41frdKoVS51v0RYf3MhxrqJm05aD5JROh8ODDVjmdHTY7PZOS3uH+6y/ER9nyKcd2CVKuJHj4uVbZWeuut52zGdm5Y1OMHpsYwRv4Uu1IiwIgljx3BT6MR4iA+ToI76+6mXPTmZjCyd/ADn6TlLCIK1WyXUULAJyAFhADgALyAFgATkALCAHgAXkALCAHAAWkAPAAnIAWEAOAAvIAWABOQAsIAeAhS+nCU4YF0e/h9dTZGUmxAwZyNLDRQw3cswrSM3JHimVPtqD+pTL8w5mzRxjNltC9f5hpPvPwg1B+oF+TFZULFlEvZaxG7lCljsjOS42jFng/Qtu5NBqlb1aCdF92RblSqww2l15vUWllAn6HABWgTYHgAXkALCAHAAWkAPAAnIAWFiUw89X5Ns6RA+LcmSOd3+5GsBnWJRDq3ncW8cBbmFxEKzdYhPEebSPAyebv70Gi3K8v/Wg+0wAj4HeCoAF5ACwgBwAFpADwAJyAFhADgALyAFgATkALCAHgAXkALCAHAAWkAPAAnIAWEAOAAvIAWABOQAsIAeABeQAsIAcABaQA8ACcgBYQA4AC8gBYAE5ACz/BwKkgSE4AMCtAAAAAElFTkSuQmCC">
+
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+Pro:ital,wght@0,600;0,700;0,900;1,600;1,700;1,900&family=Source+Serif+4:ital,opsz,wght@0,8..60,600..900;1,8..60,600..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/source-serif-pro" rel="stylesheet">
+
+  <style>
+    * { -webkit-tap-highlight-color: transparent; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #181818;
+      color: #ffffff;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    .serif-title {
+      font-family: 'Source Serif Pro', 'Source Serif 4', Georgia, 'Times New Roman', serif;
+      font-style: italic;
+      font-weight: 900;
+      font-size: 20px;
+      line-height: 1.22;
+      letter-spacing: 0em;
+    }
+    .custom-scroll::-webkit-scrollbar { width: 5px; height: 5px; }
+    .custom-scroll::-webkit-scrollbar-track { background: transparent; }
+    .custom-scroll::-webkit-scrollbar-thumb { background: #6b6b6b; border-radius: 999px; }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+    @keyframes pulseCheck {
+      0% { transform: scale(0.92); opacity: 0.5; }
+      60% { transform: scale(1.04); }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    .animate-pop { animation: pulseCheck 0.25s ease-out forwards; }
+
+    /* Printable Classroom QR Sign Mode */
+    @media print {
+      body { background: #ffffff !important; color: #181818 !important; }
+      body * { visibility: hidden; }
+      #qr-print-sheet, #qr-print-sheet * { visibility: visible; }
+      #qr-print-sheet {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: #ffffff !important;
+        color: #181818 !important;
+        padding: 32px;
+        z-index: 9999;
+      }
+      .no-print { display: none !important; }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex justify-center bg-[#181818] select-none">
+
+  <!-- MOBILE APP SHELL (Centered 430px mobile frame on desktop, full width on mobile) -->
+  <div id="mobile-shell" class="w-full max-w-[430px] min-h-screen bg-[#232323] relative flex flex-col pb-28 shadow-2xl border-x border-[#2e2e2e]">
+
+    <!-- ==================== OVERLAY HEADER (Updated Wordmark from Figma) ==================== -->
+    <header class="sticky top-0 z-30 bg-[#2a2a2a]/95 backdrop-blur-md px-4 py-3 flex items-center justify-between shadow-[0_4px_14px_rgba(0,0,0,0.45)]">
+      <button type="button" onclick="onHeaderLogoClick()" class="flex flex-col items-start text-left focus:outline-none group">
+        <div class="flex items-center gap-1.5">
+          <img id="header-check-logo" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODUwIiBoZWlnaHQ9Ijg1MCIgdmlld0JveD0iMCAwIDg1MCA4NTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik02MzcuNSAwSDIxMi41Qzk1LjEzOTUgMCAwIDk1LjEzOTUgMCAyMTIuNVY2MzcuNUMwIDc1NC44NjEgOTUuMTM5NSA4NTAgMjEyLjUgODUwSDYzNy41Qzc1NC44NjEgODUwIDg1MCA3NTQuODYxIDg1MCA2MzcuNVYyMTIuNUM4NTAgOTUuMTM5NSA3NTQuODYxIDAgNjM3LjUgMFoiIGZpbGw9IiM1NTU4ODgiLz4KPHBhdGggZD0iTTE5NSA0NDIuODY3TDMxOC45MjYgNTY3TDM5MC4xMzIgNDg0LjcwMk0zOTAuMTMyIDQ4NC43MDJMNTQ5LjA3NCAzMDFNMzkwLjEzMiA0ODQuNzAyTDM1NC4zMzMgNDQyLjg2N00zOTAuMTMyIDQ4NC43MDJMNDYwLjU1NiA1NjdMNjczIDMwMSIgc3Ryb2tlLXdpZHRoPSI0NSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2U9IiNGNUY1RjUiLz4KPC9zdmc+Cg==" alt="2nd Hour Logo" class="w-[24px] h-[24px] object-contain shrink-0 transition-transform group-active:scale-95">
+          <span class="text-[16px] font-extrabold tracking-tight text-white leading-none">2nd Hour</span>
+        </div>
+        <div class="text-[10.5px] font-medium tracking-tight text-[#d4d4d4] leading-tight mt-1">Valley View Attendance</div>
+      </button>
+
+      <!-- Header Right Actions -->
+      <div id="header-right-slot" class="flex items-center gap-1.5">
+        <button type="button" id="header-account-btn" onclick="showAccountModal()" title="Signed-In Account"
+          class="bg-[#383838] hover:bg-[#464646] active:scale-95 text-[#e0e0e0] text-[10.5px] font-semibold px-2.5 py-1.5 rounded-full flex items-center gap-1.5 transition max-w-[140px]">
+          <span id="sync-dot" class="w-2 h-2 rounded-full bg-[#638452] shrink-0"></span>
+          <span id="header-leader-label" class="truncate">Leader</span>
+        </button>
+        <button type="button" id="header-qr-btn" onclick="openQRModal()"
+          class="bg-[#9e4340] hover:bg-[#8d3936] active:scale-95 text-white text-[10.5px] font-semibold px-3.5 py-1.5 rounded-full shadow-sm transition whitespace-nowrap flex items-center gap-1">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h6v6H3V3zm12 0h6v6h-6V3zM3 15h6v6H3v-6zm13 2h2v2h-2v-2zm-3-3h2v2h-2v-2zm6 0h2v2h-2v-2zm-3 6h5v2h-5v-2z"/>
+          </svg>
+          <span>QR / NFC</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- ===================================================================== -->
+    <!-- MODE 1: SELF CHECK-IN VIEW (QR / NFC Classroom Scan Mode)             -->
+    <!-- ===================================================================== -->
+    <div id="scan-app" class="hidden flex-1 px-4 pt-4 space-y-4">
+
+      <!-- Returning Preview Exit Bar (Visible ONLY when Leader previews Scan Mode from Admin) -->
+      <div id="scan-preview-banner" class="hidden bg-[#383838] border border-[#525252] rounded-[12px] px-3.5 py-2 flex items-center justify-between text-[11.5px]">
+        <span class="text-[#d6d6d6] font-medium">Previewing Classroom QR Scan View</span>
+        <button type="button" onclick="exitScanPreview()"
+          class="bg-[#5c8d97] hover:bg-[#4e7b84] text-white font-bold px-3 py-1 rounded-full text-[11px] transition">
+          ← Back to Leadership
+        </button>
+      </div>
+
+      <!-- Friend Mode Banner -->
+      <div id="friend-mode-banner" class="hidden bg-[#3d3d3d] border border-[#bfa15f] rounded-[14px] p-3.5 flex items-center justify-between gap-2 shadow">
+        <div>
+          <p class="text-[12px] font-bold text-[#f3dfb2]">Checking In Someone Else</p>
+          <p class="text-[11px] text-[#d0d0d0]">Your saved profile on this phone won’t be overwritten.</p>
+        </div>
+        <button type="button" onclick="cancelFriendMode()"
+          class="bg-[#525252] hover:bg-[#666666] text-white text-[11px] font-bold px-3 py-1.5 rounded-full shrink-0 transition">
+          Cancel
+        </button>
+      </div>
+
+      <!-- Auto / Instant Check-In Success Card (#5c7c4c Sage Green — Matches Figma 05) -->
+      <section id="scan-success-card" class="hidden bg-[#5c7c4c] rounded-[16px] p-5 text-center shadow-[0_8px_20px_rgba(0,0,0,0.4)] animate-pop">
+        <div class="w-14 h-14 rounded-full bg-[#2e3d26] text-white flex items-center justify-center mx-auto mb-3 shadow-md">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2.8" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+          </svg>
+        </div>
+        <div class="text-[12px] text-[#e3efe0] font-medium">You’re Checked In!</div>
+        <h2 id="scan-success-name" class="serif-title text-[24px] text-white mt-0.5">Welcome!</h2>
+        <p id="scan-success-detail" class="text-[12.5px] text-[#e3efe0] mt-1 font-medium"></p>
+        <div id="scan-visit-badge" class="hidden mt-2.5 inline-flex items-center gap-1.5 bg-[#2e3d26] text-white text-[11px] font-bold px-3.5 py-1 rounded-full">
+        </div>
+
+        <div class="mt-5 pt-4 border-t border-white/20 space-y-2.5">
+          <button type="button" onclick="startCheckInFriend()"
+            class="w-full bg-[#2e3d26] hover:bg-[#222e1c] active:scale-95 text-white font-bold text-[12.5px] py-2.5 px-4 rounded-full shadow transition flex items-center justify-center gap-2">
+            <span>+ Check In Someone Else</span>
+          </button>
+          <button type="button" onclick="switchDeviceUser()"
+            class="text-[11px] text-[#e3efe0]/85 hover:text-white underline font-medium py-1">
+            Not you? Switch phone owner
+          </button>
+        </div>
+      </section>
+
+      <!-- First-Time / Manual Check-In Container (#424242 Card with #f5f5f5 Inner Surface — Matches Figma 05) -->
+      <section id="scan-form-container" class="bg-[#424242] rounded-[14px] p-4 shadow-[0_6px_16px_rgba(0,0,0,0.3)] space-y-3.5">
+        <div class="flex items-center justify-between gap-2">
+          <div>
+            <h2 class="serif-title text-[18px] text-white">Select Your Role</h2>
+            <p id="scan-class-subtitle" class="text-[11px] text-[#bdbdbd]">Sunday School • Remembered next Sunday</p>
+          </div>
+          <select id="scan-date-select" aria-label="Select Check-In Date" onchange="onScanDateChange(this.value)"
+            class="bg-[#2a2a2a] text-white text-[11px] font-bold rounded-[8px] px-2.5 py-1.5 focus:outline-none">
+          </select>
+        </div>
+
+        <!-- Role Switcher Pills -->
+        <div class="grid grid-cols-2 gap-2 bg-[#2a2a2a] p-1.5 rounded-full">
+          <button type="button" id="scan-tab-member" onclick="switchScanRole('member')"
+            class="py-2 rounded-full text-[12px] font-bold bg-[#5c8d97] text-white shadow transition">
+            Ward Member
+          </button>
+          <button type="button" id="scan-tab-visitor" onclick="switchScanRole('visitor')"
+            class="py-2 rounded-full text-[12px] font-bold text-[#bdbdbd] hover:text-white transition">
+            I’m a Visitor
+          </button>
+        </div>
+
+        <!-- Ward Member Search & Tap List -->
+        <div id="scan-member-pane" class="bg-[#f5f5f5] text-[#232323] rounded-[12px] p-3.5 shadow-inner space-y-3">
+          <div>
+            <label for="scan-member-search" class="block text-[10.5px] font-extrabold text-[#555555] uppercase tracking-wider mb-1.5">
+              FIND YOUR NAME ON THE WARD ROSTER
+            </label>
+            <div class="relative">
+              <input id="scan-member-search" type="text" oninput="renderScanMemberList()"
+                placeholder="Type first or last name..."
+                class="w-full bg-white border border-black/15 text-[#232323] placeholder-[#7a7a7a] text-[13.5px] font-semibold rounded-[10px] pl-3.5 pr-8 py-2.5 focus:outline-none focus:border-[#555888]">
+              <button type="button" id="scan-search-clear" onclick="clearScanSearch()" aria-label="Clear Search"
+                class="hidden absolute right-2.5 top-2.5 text-[#777777] hover:text-[#232323] p-0.5">
+                ✕
+              </button>
+            </div>
+          </div>
+
+          <div id="scan-member-results" class="max-h-64 overflow-y-auto divide-y divide-black/10 rounded-[8px] bg-white border border-black/10 custom-scroll">
+          </div>
+
+          <p class="text-[11px] text-[#666666] text-center">
+            Don’t see your name? Tap <button type="button" onclick="switchScanRole('visitor')" class="text-[#9e4340] font-bold underline">I’m a Visitor</button> above.
+          </p>
+        </div>
+
+        <!-- Visitor Registration Form -->
+        <form id="scan-visitor-pane" onsubmit="submitScanVisitor(event)" class="hidden bg-[#f5f5f5] text-[#232323] rounded-[12px] p-3.5 shadow-inner space-y-3">
+          <div>
+            <label for="vis-name" class="block text-[11px] font-bold text-[#444444] mb-1">Full Name <span class="text-[#9e4340]">*</span></label>
+            <input id="vis-name" type="text" required placeholder="e.g., Jordan Taylor"
+              class="w-full bg-white border border-black/15 text-[#232323] text-[13.5px] font-semibold rounded-[10px] px-3 py-2 focus:outline-none">
+          </div>
+          <div>
+            <label for="vis-phone" class="block text-[11px] font-bold text-[#444444] mb-1">Phone Number <span class="text-[#777777] font-normal">(optional)</span></label>
+            <input id="vis-phone" type="tel" placeholder="(801) 555-0123"
+              class="w-full bg-white border border-black/15 text-[#232323] text-[13.5px] font-semibold rounded-[10px] px-3 py-2 focus:outline-none">
+          </div>
+          <div>
+            <label for="vis-email" class="block text-[11px] font-bold text-[#444444] mb-1">Email <span class="text-[#777777] font-normal">(optional)</span></label>
+            <input id="vis-email" type="email" placeholder="you@example.com"
+              class="w-full bg-white border border-black/15 text-[#232323] text-[13.5px] font-semibold rounded-[10px] px-3 py-2 focus:outline-none">
+          </div>
+          <div>
+            <label for="vis-notes" class="block text-[11px] font-bold text-[#444444] mb-1">Notes / Visiting From <span class="text-[#777777] font-normal">(optional)</span></label>
+            <input id="vis-notes" type="text" placeholder="e.g., Just moved in / Visiting family"
+              class="w-full bg-white border border-black/15 text-[#232323] text-[13.5px] font-semibold rounded-[10px] px-3 py-2 focus:outline-none">
+          </div>
+          <button type="submit" id="vis-submit-btn"
+            class="w-full bg-[#5c7c4c] hover:bg-[#4e6b40] active:scale-95 text-white font-bold text-[13px] py-2.5 rounded-full shadow-md transition">
+            Complete Visitor Check-In
+          </button>
+        </form>
+      </section>
+    </div>
+
+    <!-- ===================================================================== -->
+    <!-- MODE 2: LEADERSHIP & PRESIDENCY VIEW (Requires 90-Day Email Auth)     -->
+    <!-- ===================================================================== -->
+    <div id="admin-app" class="flex-1 flex flex-col">
+
+      <!-- TOP FEATURED CLASS & DATE BANNER CARD (Matches Figma Class Coloration + Slider) -->
+      <section class="px-4 pt-4">
+        <div id="hero-class-card" class="bg-[#555888] rounded-[16px] p-4 shadow-[0_8px_20px_rgba(0,0,0,0.4)] transition-colors duration-300 relative">
+          <!-- Top Title & Custom Date Dropdown Stepper Row -->
+          <div class="flex items-start justify-between gap-2">
+            <div>
+              <div class="text-[11.5px] text-white/80 font-normal">Active 2nd Hour Class</div>
+              <h1 id="active-class-heading" class="serif-title text-[21px] text-white leading-snug mt-0.5">
+                Sunday School
+              </h1>
+            </div>
+
+            <!-- Date Stepper + Custom White Dropdown Menu (Matches Figma Top-Left) -->
+            <div class="relative" id="date-dropdown-wrapper">
+              <div class="flex items-center gap-1 bg-black/30 backdrop-blur-sm p-1 rounded-[10px]">
+                <button type="button" onclick="stepDate(-1)" aria-label="Previous Sunday"
+                  class="w-6 h-6 rounded-[6px] hover:bg-white/15 text-white flex items-center justify-center font-bold text-[13px] transition">
+                  ‹
+                </button>
+                <button type="button" id="date-dropdown-trigger" onclick="toggleDateDropdown(event)"
+                  class="text-white text-[11.5px] font-bold px-1.5 py-0.5 flex items-center gap-1 focus:outline-none">
+                  <span id="date-dropdown-label">Loading...</span>
+                  <span class="text-[10px] opacity-80">▾</span>
+                </button>
+                <select id="date-select" aria-label="Select Sunday Date" onchange="onDateChange(this.value)" class="hidden">
+                </select>
+                <button type="button" onclick="stepDate(1)" aria-label="Next Sunday"
+                  class="w-6 h-6 rounded-[6px] hover:bg-white/15 text-white flex items-center justify-center font-bold text-[13px] transition">
+                  ›
+                </button>
+              </div>
+
+              <!-- White Custom Date Popover Menu (Matches Figma white card) -->
+              <div id="date-dropdown-menu"
+                   class="hidden absolute right-0 top-[calc(100%+6px)] w-40 bg-[#f5f5f5] text-[#232323] rounded-[12px] py-2 px-2 shadow-[0_10px_28px_rgba(0,0,0,0.45)] z-50 max-h-56 overflow-y-auto custom-scroll">
+              </div>
+            </div>
+          </div>
+
+          <!-- Class Switcher Pills (Horizontally Scrollable) -->
+          <div id="class-pills-bar" onscroll="updateClassSliderThumb()"
+               class="flex items-center gap-1.5 overflow-x-auto no-scrollbar mt-3 pb-1 scroll-smooth">
+          </div>
+
+          <!-- Horizontal Slider Track & Thumb (Matches Figma Slider Bar under Class Pills) -->
+          <div class="mt-2 mx-auto w-44 h-1.5 bg-black/20 rounded-full overflow-hidden relative cursor-pointer" onclick="onSliderTrackClick(event)">
+            <div id="class-slider-thumb" class="h-full bg-black/35 rounded-full transition-all duration-300" style="width: 38%; transform: translateX(0%);"></div>
+          </div>
+
+          <!-- 3 KPI Stat Pills Inside Featured Card (Shown on Insights & Report Tabs, Hidden on Roll Call & Visitors to Reduce Redundancy) -->
+          <div id="hero-kpi-strip" class="hidden grid-cols-3 gap-2 mt-3.5 pt-3 border-t border-white/15">
+            <div class="bg-black/25 rounded-[10px] px-2.5 py-2 text-center">
+              <div class="text-[9.5px] uppercase tracking-wider text-white/75 font-semibold">Present</div>
+              <div class="mt-0.5 flex items-baseline justify-center gap-1">
+                <span id="stat-present" class="text-[17px] font-extrabold text-white">0</span>
+                <span class="text-[11px] text-white/70 font-semibold">/ <span id="stat-total">0</span></span>
+              </div>
+            </div>
+            <div class="bg-black/25 rounded-[10px] px-2.5 py-2 text-center">
+              <div class="text-[9.5px] uppercase tracking-wider text-white/75 font-semibold">Today Rate</div>
+              <div class="mt-0.5 flex flex-col items-center leading-tight">
+                <span id="stat-day-rate" class="text-[16px] font-extrabold text-white">0%</span>
+                <span id="stat-avg-rate" class="text-[9.5px] text-white/75 font-medium">YTD 0%</span>
+              </div>
+            </div>
+            <button type="button" onclick="switchAdminTab('visitors')" class="bg-black/25 hover:bg-black/35 rounded-[10px] px-2.5 py-2 text-center transition">
+              <div class="text-[9.5px] uppercase tracking-wider text-white/75 font-semibold">Visitors</div>
+              <div class="mt-0.5 flex flex-col items-center leading-tight">
+                <span id="stat-visitors" class="text-[16px] font-extrabold text-white">0</span>
+                <span id="stat-repeat-visitors" class="text-[9.5px] text-[#f3dfb2] font-semibold">0 repeat</span>
+              </div>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== TAB 1: ROLL CALL ==================== -->
+      <main id="tab-rollcall" class="flex-1 px-4 pt-4 space-y-4">
+        <section class="bg-[#424242] rounded-[14px] p-4 shadow-[0_6px_16px_rgba(0,0,0,0.3)] space-y-3">
+          <!-- Section Header + Batch Actions -->
+          <div class="flex items-center justify-between gap-2">
+            <div>
+              <h2 class="serif-title text-[18px] text-white">Class Roll Call</h2>
+              <p id="rollcall-subtitle" class="text-[11px] text-[#bdbdbd]">Tap any member to toggle attendance</p>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <button type="button" onclick="openBatchConfirmModal(true)"
+                class="bg-[#5c7c4c] hover:bg-[#4f6c40] active:scale-95 text-white text-[10.5px] font-bold px-3 py-1.5 rounded-full shadow transition">
+                All Present
+              </button>
+              <button type="button" onclick="openBatchConfirmModal(false)"
+                class="bg-[#2a2a2a] hover:bg-[#1e1e1e] active:scale-95 text-[#d4d4d4] text-[10.5px] font-bold px-2.5 py-1.5 rounded-full shadow transition">
+                Clear
+              </button>
+            </div>
+          </div>
+
+          <!-- Search Input (#f5f5f5 surface) -->
+          <div class="relative">
+            <input id="member-search" type="text" oninput="renderRosterList()"
+              placeholder="Search member name, phone, or email..."
+              class="w-full bg-[#f5f5f5] text-[#232323] placeholder-[#757575] text-[13px] font-semibold rounded-[10px] pl-9 pr-8 py-2.5 focus:outline-none shadow-inner">
+            <svg class="w-4 h-4 text-[#666666] absolute left-3 top-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 103.5 10.5a7.5 7.5 0 0013.15 6.15z"/>
+            </svg>
+            <button type="button" id="search-clear-btn" onclick="clearSearch()" aria-label="Clear Member Search"
+              class="hidden absolute right-2.5 top-2.5 text-[#666666] hover:text-[#232323] text-xs font-bold px-1">
+              ✕
+            </button>
+          </div>
+
+          <!-- Filter Pills -->
+          <div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar">
+            <button type="button" onclick="setFilter('all')" id="flt-all"
+              class="flt-chip px-3 py-1 rounded-full text-[11px] font-bold bg-[#5c8d97] text-white transition shrink-0">
+              All
+            </button>
+            <button type="button" onclick="setFilter('present')" id="flt-present"
+              class="flt-chip px-3 py-1 rounded-full text-[11px] font-bold bg-[#2a2a2a] text-[#bdbdbd] hover:text-white transition shrink-0">
+              Present
+            </button>
+            <button type="button" onclick="setFilter('absent')" id="flt-absent"
+              class="flt-chip px-3 py-1 rounded-full text-[11px] font-bold bg-[#2a2a2a] text-[#bdbdbd] hover:text-white transition shrink-0">
+              Absent
+            </button>
+            <button type="button" onclick="setFilter('M')" id="flt-M"
+              class="flt-chip px-3 py-1 rounded-full text-[11px] font-bold bg-[#2a2a2a] text-[#bdbdbd] hover:text-white transition shrink-0">
+              Brothers
+            </button>
+            <button type="button" onclick="setFilter('F')" id="flt-F"
+              class="flt-chip px-3 py-1 rounded-full text-[11px] font-bold bg-[#2a2a2a] text-[#bdbdbd] hover:text-white transition shrink-0">
+              Sisters
+            </button>
+          </div>
+
+          <!-- Inner Off-White Roster Table (#f5f5f5) -->
+          <div id="roster-list" class="bg-[#f5f5f5] text-[#232323] rounded-[12px] p-2.5 shadow-inner divide-y divide-black/10 max-h-[540px] overflow-y-auto custom-scroll">
+          </div>
+        </section>
+      </main>
+
+      <!-- ==================== TAB 2: DASHBOARD & INSIGHTS ==================== -->
+      <main id="tab-dashboard" class="hidden flex-1 px-4 pt-4 space-y-4">
+        <!-- Attendance Tiers Card (#424242 outer + #f5f5f5 inner) -->
+        <section class="bg-[#424242] rounded-[14px] p-4 shadow-[0_6px_16px_rgba(0,0,0,0.3)] space-y-3">
+          <div>
+            <h2 class="serif-title text-[18px] text-white">Attendance Tiers</h2>
+            <p class="text-[11px] text-[#bdbdbd]">Historical participation breakdown for this class</p>
+          </div>
+          <div class="bg-[#f5f5f5] text-[#232323] rounded-[12px] p-3.5 shadow-inner space-y-3">
+            <div>
+              <div class="flex justify-between text-[11.5px] font-bold mb-1">
+                <span class="text-[#2e5223]">Consistent (&gt;60%)</span>
+                <span id="tier-high" class="text-[#232323]">0 members</span>
+              </div>
+              <div class="w-full h-2.5 bg-black/10 rounded-full overflow-hidden">
+                <div id="bar-high" class="h-full bg-[#5c7c4c] rounded-full transition-all duration-500" style="width:0%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-[11.5px] font-bold mb-1">
+                <span class="text-[#3e416e]">Occasional (30%–60%)</span>
+                <span id="tier-mid" class="text-[#232323]">0 members</span>
+              </div>
+              <div class="w-full h-2.5 bg-black/10 rounded-full overflow-hidden">
+                <div id="bar-mid" class="h-full bg-[#555888] rounded-full transition-all duration-500" style="width:0%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-[11.5px] font-bold mb-1">
+                <span class="text-[#8a6d2b]">Infrequent (1%–29%)</span>
+                <span id="tier-low" class="text-[#232323]">0 members</span>
+              </div>
+              <div class="w-full h-2.5 bg-black/10 rounded-full overflow-hidden">
+                <div id="bar-low" class="h-full bg-[#bfa15f] rounded-full transition-all duration-500" style="width:0%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-[11.5px] font-bold mb-1">
+                <span class="text-[#9e4340]">Not Yet Attended (0%)</span>
+                <span id="tier-zero" class="text-[#232323]">0 members</span>
+              </div>
+              <div class="w-full h-2.5 bg-black/10 rounded-full overflow-hidden">
+                <div id="bar-zero" class="h-full bg-[#9e4340] rounded-full transition-all duration-500" style="width:0%"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Ministering & Outreach Focus Card -->
+        <section class="bg-[#424242] rounded-[14px] p-4 shadow-[0_6px_16px_rgba(0,0,0,0.3)] space-y-3">
+          <div class="flex items-center justify-between">
+            <div>
+              <h2 class="serif-title text-[18px] text-white">Ministering &amp; Outreach</h2>
+              <p class="text-[11px] text-[#bdbdbd]">Absent today with &lt;35% YTD attendance — 1-tap text or call</p>
+            </div>
+            <span class="bg-[#9e4340] text-white text-[10px] font-bold px-2.5 py-1 rounded-full" id="outreach-count-badge">0</span>
+          </div>
+          <div id="outreach-list" class="bg-[#f5f5f5] text-[#232323] rounded-[12px] p-2.5 shadow-inner divide-y divide-black/10 max-h-96 overflow-y-auto custom-scroll">
+          </div>
+        </section>
+      </main>
+
+      <!-- ==================== TAB 3: VISITORS TRACKER ==================== -->
+      <main id="tab-visitors" class="hidden flex-1 px-4 pt-4 space-y-4">
+        <!-- Quick Add Visitor Card (#5c7c4c Sage Green Banner) -->
+        <section class="bg-[#5c7c4c] rounded-[16px] p-4 shadow-[0_6px_16px_rgba(0,0,0,0.3)] flex items-center justify-between gap-3">
+          <div>
+            <div class="text-[11px] text-[#e3efe0] font-medium">New Guest in Class?</div>
+            <h2 class="serif-title text-[19px] text-white">Log a Class Visitor</h2>
+          </div>
+          <button type="button" onclick="openAddVisitorModal()"
+            class="bg-[#2e3d26] hover:bg-[#222e1c] active:scale-95 text-white text-[12px] font-bold px-4 py-2 rounded-full shadow transition shrink-0">
+            + Add Visitor
+          </button>
+        </section>
+
+        <!-- Visitors Today -->
+        <section class="bg-[#424242] rounded-[14px] p-4 shadow-[0_6px_16px_rgba(0,0,0,0.3)] space-y-2.5">
+          <div class="flex items-center justify-between">
+            <h3 class="serif-title text-[17px] text-white">Visitors on Selected Sunday</h3>
+            <span id="visitors-today-badge" class="bg-[#5c8d97] text-white text-[10.5px] font-bold px-2.5 py-0.5 rounded-full">0</span>
+          </div>
+          <div id="visitors-today-list" class="bg-[#f5f5f5] text-[#232323] rounded-[12px] p-3 shadow-inner divide-y divide-black/10">
+          </div>
+        </section>
+
+        <!-- Repeat Visitors (>1 Visit) -->
+        <section class="bg-[#424242] rounded-[14px] p-4 shadow-[0_6px_16px_rgba(0,0,0,0.3)] space-y-2.5">
+          <div class="flex items-center justify-between">
+            <div>
+              <h3 class="serif-title text-[17px] text-white">Repeat Visitors (&gt;1 Sunday)</h3>
+              <p class="text-[11px] text-[#bdbdbd]">Guests who have attended multiple times</p>
+            </div>
+            <span id="visitors-repeat-badge" class="bg-[#bfa15f] text-[#232323] text-[10.5px] font-extrabold px-2.5 py-0.5 rounded-full">0</span>
+          </div>
+          <div id="visitors-frequent-list" class="bg-[#f5f5f5] text-[#232323] rounded-[12px] p-3 shadow-inner divide-y divide-black/10">
+          </div>
+        </section>
+      </main>
+
+      <!-- ==================== TAB 4: WARD REPORT & CONTACTS ==================== -->
+      <main id="tab-reports" class="hidden flex-1 px-4 pt-4 space-y-4">
+        <!-- All-Classes Weekly Ward Report (#5c8d97 Muted Teal Card — Updated per Figma 04) -->
+        <section class="bg-[#5c8d97] rounded-[16px] p-4 shadow-[0_8px_20px_rgba(0,0,0,0.4)] space-y-3">
+          <div class="flex items-center justify-between gap-2">
+            <div>
+              <div class="text-[11px] text-[#e4f0f2]">All 5 Second-Hour Classes</div>
+              <h2 class="serif-title text-[20px] text-white">Weekly Ward Summary</h2>
+            </div>
+            <button type="button" onclick="loadWardReport()"
+              class="bg-[#274147] hover:bg-[#1d3136] active:scale-95 text-white text-[11px] font-bold px-3.5 py-1.5 rounded-full shadow transition">
+              Refresh
+            </button>
+          </div>
+
+          <div id="ward-report-cards" class="bg-[#f5f5f5] text-[#232323] rounded-[12px] p-3 shadow-inner divide-y divide-black/10">
+          </div>
+
+          <button type="button" onclick="copyWardReportText()"
+            class="w-full bg-[#274147] hover:bg-[#1d3136] active:scale-95 text-white font-bold text-[12.5px] py-2.5 px-4 rounded-full shadow-md transition flex items-center justify-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+            </svg>
+            <span>Copy Summary for Text / Email</span>
+          </button>
+        </section>
+
+        <!-- Bishopric & Presidency Contacts Directory (#424242 Card + #f5f5f5 Inner) -->
+        <section class="bg-[#424242] rounded-[14px] p-4 shadow-[0_6px_16px_rgba(0,0,0,0.3)] space-y-2.5">
+          <div>
+            <h3 class="serif-title text-[18px] text-white">Presidency &amp; Report Contacts</h3>
+            <p class="text-[11px] text-[#bdbdbd]">1-tap text or email today’s attendance report to ward leaders</p>
+          </div>
+          <div id="report-contacts-list" class="bg-[#f5f5f5] text-[#232323] rounded-[12px] p-2.5 shadow-inner divide-y divide-black/10 max-h-96 overflow-y-auto custom-scroll">
+          </div>
+        </section>
+      </main>
+
+      <!-- FLOATING UNSAVED CHANGES BAR (Above Bottom Nav Dock) -->
+      <div id="unsaved-bar" class="hidden fixed bottom-16 left-1/2 -translate-x-1/2 w-[calc(100%-24px)] max-w-[406px] z-40">
+        <div class="bg-[#555888] border border-white/20 text-white rounded-full px-4 py-2.5 shadow-[0_10px_28px_rgba(0,0,0,0.65)] flex items-center justify-between gap-2">
+          <div class="flex items-center gap-2 min-w-0">
+            <span class="w-2.5 h-2.5 rounded-full bg-[#f3dfb2] animate-pulse shrink-0"></span>
+            <span id="unsaved-count" class="text-[12px] font-bold truncate">Unsaved changes</span>
+          </div>
+          <div class="flex items-center gap-1.5 shrink-0">
+            <button type="button" onclick="discardChanges()"
+              class="text-[11px] text-white/80 hover:text-white font-semibold px-2.5 py-1 rounded-full">
+              Undo
+            </button>
+            <button type="button" id="save-btn" onclick="commitChanges()"
+              class="bg-[#5c7c4c] hover:bg-[#4e6b40] active:scale-95 text-white font-bold text-[12px] px-4 py-1.5 rounded-full shadow transition">
+              Save to Sheet
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== OVERLAY FOOTER NAVIGATION (With Icons!) ==================== -->
+      <nav id="admin-bottom-nav" aria-label="Bottom Navigation"
+           class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] z-30 bg-[#2a2a2a]/95 backdrop-blur-md border-t border-[#383838] px-3 py-2 flex items-center justify-around shadow-[0_-4px_16px_rgba(0,0,0,0.45)]">
+        <!-- Roll Call Tab -->
+        <button type="button" onclick="switchAdminTab('rollcall')" id="nav-btn-rollcall" aria-label="Roll Call"
+          class="px-4 py-1.5 rounded-full bg-[#5c8d97] text-white flex items-center gap-1.5 transition shadow">
+          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+          </svg>
+          <span class="text-[11px] font-bold">Roll Call</span>
+        </button>
+
+        <!-- Dashboard / Insights Tab -->
+        <button type="button" onclick="switchAdminTab('dashboard')" id="nav-btn-dashboard" aria-label="Insights"
+          class="px-3.5 py-1.5 rounded-full text-white/75 hover:text-white flex items-center gap-1.5 transition">
+          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+          </svg>
+          <span class="text-[11px] font-bold">Insights</span>
+        </button>
+
+        <!-- Visitors Tab -->
+        <button type="button" onclick="switchAdminTab('visitors')" id="nav-btn-visitors" aria-label="Visitors"
+          class="px-3.5 py-1.5 rounded-full text-white/75 hover:text-white flex items-center gap-1.5 transition">
+          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
+          <span class="text-[11px] font-bold">Visitors</span>
+        </button>
+
+        <!-- Ward Report Tab -->
+        <button type="button" onclick="switchAdminTab('reports')" id="nav-btn-reports" aria-label="Ward Report"
+          class="px-3.5 py-1.5 rounded-full text-white/75 hover:text-white flex items-center gap-1.5 transition">
+          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+          </svg>
+          <span class="text-[11px] font-bold">Report</span>
+        </button>
+      </nav>
+
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- SIGN-IN GATE SCREEN (90-Day Email Code Auth — Matches Figma 06)       -->
+  <!-- ===================================================================== -->
+  <div id="auth-gate" class="hidden fixed inset-0 z-[70] bg-[#181818] flex items-center justify-center p-4 overflow-y-auto"
+       style="padding-top:max(16px, env(safe-area-inset-top)); padding-bottom:max(16px, env(safe-area-inset-bottom));">
+    <div class="w-full max-w-[345px] bg-[#3d3d3d] border border-[#525252] rounded-[20px] p-6 shadow-2xl text-white space-y-4">
+      <div class="flex items-center gap-3">
+        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODUwIiBoZWlnaHQ9Ijg1MCIgdmlld0JveD0iMCAwIDg1MCA4NTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik02MzcuNSAwSDIxMi41Qzk1LjEzOTUgMCAwIDk1LjEzOTUgMCAyMTIuNVY2MzcuNUMwIDc1NC44NjEgOTUuMTM5NSA4NTAgMjEyLjUgODUwSDYzNy41Qzc1NC44NjEgODUwIDg1MCA3NTQuODYxIDg1MCA2MzcuNVYyMTIuNUM4NTAgOTUuMTM5NSA3NTQuODYxIDAgNjM3LjUgMFoiIGZpbGw9IiM1NTU4ODgiLz4KPHBhdGggZD0iTTE5NSA0NDIuODY3TDMxOC45MjYgNTY3TDM5MC4xMzIgNDg0LjcwMk0zOTAuMTMyIDQ4NC43MDJMNTQ5LjA3NCAzMDFNMzkwLjEzMiA0ODQuNzAyTDM1NC4zMzMgNDQyLjg2N00zOTAuMTMyIDQ4NC43MDJMNDYwLjU1NiA1NjdMNjczIDMwMSIgc3Ryb2tlLXdpZHRoPSI0NSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2U9IiNGNUY1RjUiLz4KPC9zdmc+Cg==" alt="Valley View 2nd Hour" class="w-10 h-10 shrink-0">
+        <div>
+          <h3 class="text-[17px] font-bold leading-tight">Valley View 2nd Hour</h3>
+          <p class="text-[11.5px] text-[#bdbdbd]">Leadership &amp; presidency sign-in</p>
+        </div>
+      </div>
+
+      <!-- Step 1: Enter Report Contacts Email -->
+      <div id="auth-step-email" class="space-y-3">
+        <label for="auth-email" class="block text-[11.5px] font-semibold text-[#d6d6d6]">
+          Email address listed in Report Contacts
+        </label>
+        <input id="auth-email" type="email" inputmode="email" autocomplete="email" autocapitalize="off" spellcheck="false"
+          placeholder="you@example.com"
+          onkeydown="if(event.key==='Enter'){authSendCode();}"
+          class="w-full bg-[#f5f5f5] text-[#2b2b2b] text-[14px] font-semibold rounded-[12px] px-4 py-2.5 focus:outline-none">
+        <button id="auth-send-btn" type="button" onclick="authSendCode()"
+          class="w-full bg-[#9e4340] hover:bg-[#8d3936] active:scale-95 text-white font-bold text-[13px] py-2.5 rounded-full shadow-md transition">
+          Email Me a Code
+        </button>
+      </div>
+
+      <!-- Step 2: Enter 6-Digit Verification Code -->
+      <div id="auth-step-code" class="hidden space-y-3">
+        <label for="auth-code" class="block text-[11.5px] font-semibold text-[#d6d6d6]">
+          6-digit code from your email
+        </label>
+        <input id="auth-code" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="6" placeholder="123456"
+          onkeydown="if(event.key==='Enter'){authVerifyCode();}"
+          class="w-full bg-[#f5f5f5] text-[#2b2b2b] text-[20px] font-bold tracking-[0.35em] text-center rounded-[12px] px-4 py-2.5 focus:outline-none">
+        <button id="auth-verify-btn" type="button" onclick="authVerifyCode()"
+          class="w-full bg-[#9e4340] hover:bg-[#8d3936] active:scale-95 text-white font-bold text-[13px] py-2.5 rounded-full shadow-md transition">
+          Sign In (Valid for 90 Days)
+        </button>
+        <div class="flex justify-between text-[11.5px]">
+          <button type="button" onclick="authBackToEmail()" class="text-[#bdbdbd] underline">Use a different email</button>
+          <button type="button" onclick="authSendCode()" class="text-[#bdbdbd] underline">Send a new code</button>
+        </div>
+      </div>
+
+      <p id="auth-msg" class="text-[11.5px] leading-snug min-h-[16px] text-[#f0b4b0]"></p>
+
+      <!-- Install Instructions Footer (Matches Figma Modal 1) -->
+      <div class="text-[10.5px] leading-relaxed text-[#bdbdbd] border-t border-[#525252] pt-3 text-center space-y-0.5">
+        <div class="font-semibold text-[#d6d6d6]">Install App:</div>
+        <div>Apple in Safari: tap Share, then “Add to Home Screen”</div>
+        <div>Android in Chrome: settings “Install and Create Shortcut”</div>
+        <div class="install-hint hidden pt-1.5"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- ACCOUNT POPUP (Matches Figma Modal 4)                                 -->
+  <!-- ===================================================================== -->
+  <div id="modal-account" class="hidden fixed inset-0 z-50 bg-black/75 backdrop-blur-sm flex items-center justify-center p-4" onclick="onModalBackdropClick(event, 'modal-account')">
+    <div class="w-full max-w-[320px] bg-[#3d3d3d] border border-[#525252] rounded-[20px] p-6 shadow-2xl text-white space-y-4">
+      <div class="flex items-start justify-between">
+        <div class="min-w-0">
+          <h3 id="account-name" class="text-[16px] font-bold leading-tight truncate"></h3>
+          <p id="account-email" class="text-[11.5px] text-[#bdbdbd] truncate"></p>
+          <p id="account-calling" class="text-[11px] text-[#9fd0d8] font-semibold mt-1"></p>
+          <p class="text-[10.5px] text-[#a0a0a0] mt-1">90-day authenticated session active</p>
+        </div>
+        <button type="button" onclick="closeAccountModal()" aria-label="Close Account Modal" class="text-[#aaaaaa] hover:text-white p-1">
+          <svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+        </button>
+      </div>
+      <button type="button" onclick="refreshBoot(true); closeAccountModal();"
+        class="w-full bg-[#5c8d97] hover:bg-[#4f7d86] active:scale-95 text-white font-bold text-[13px] py-2.5 rounded-full shadow-md transition">
+        Sync Latest Sheet Data
+      </button>
+      <button type="button" onclick="signOut()"
+        class="w-full bg-[#9e4340] hover:bg-[#8d3936] active:scale-95 text-white font-bold text-[13px] py-2.5 rounded-full shadow-md transition">
+        Sign Out
+      </button>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- MODAL 1: CLASSROOM QR & NFC LINK POPUP (Matches Figma Modal 3)        -->
+  <!-- ===================================================================== -->
+  <div id="modal-qr" class="hidden fixed inset-0 z-50 bg-black/75 backdrop-blur-sm flex items-center justify-center p-4" onclick="onModalBackdropClick(event, 'modal-qr')">
+    <div class="w-full max-w-[330px] bg-[#464646] border border-[#5a5a5a] rounded-[18px] p-5 shadow-2xl text-white flex flex-col items-center relative">
+      <button type="button" onclick="closeQRModal()" aria-label="Close QR Modal"
+        class="absolute top-3 right-3 text-[#bdbdbd] hover:text-white p-1">
+        <svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+      </button>
+
+      <div id="qr-modal-title" class="serif-title text-[18px] text-white mb-1">Sunday School Check-In</div>
+      <p class="text-[11px] text-[#cccccc] mb-3 text-center">Class members scan to self check-in</p>
+
+      <!-- Class Picker Inside QR Modal -->
+      <select id="qr-class-select" onchange="updateQRCode(this.value)"
+        class="w-full bg-[#f5f5f5] text-[#232323] text-[12.5px] font-bold rounded-[10px] px-3 py-2 mb-3.5 focus:outline-none shadow-sm">
+      </select>
+
+      <!-- Large Rounded White QR Code Box -->
+      <div class="w-[210px] h-[210px] bg-white rounded-[18px] p-3.5 flex items-center justify-center shadow-md">
+        <div id="qrcode-canvas" class="flex items-center justify-center"></div>
+      </div>
+
+      <!-- URL + Copy Row -->
+      <div class="w-full mt-3.5">
+        <div class="text-[10px] text-[#bdbdbd] font-medium mb-1">QR / NFC Tag URL (Public Check-In Only):</div>
+        <div class="flex items-center gap-2">
+          <input type="text" id="qr-url-input" readonly
+            class="flex-1 bg-[#d9d9d9] text-[#333333] text-[10.5px] font-semibold px-2.5 py-1.5 rounded-[6px] focus:outline-none truncate">
+          <button type="button" onclick="copyQRUrl()"
+            class="bg-[#5c8d97] hover:bg-[#4e7b84] active:scale-95 text-white text-[10.5px] font-bold px-3.5 py-1.5 rounded-[6px] shadow transition shrink-0">
+            Copy
+          </button>
+        </div>
+      </div>
+
+      <!-- Actions: Print & Preview Check-In (Updated label per Figma Modal 3) -->
+      <div class="w-full grid grid-cols-2 gap-2 mt-4">
+        <button type="button" onclick="window.print()"
+          class="bg-[#2a2a2a] hover:bg-[#1e1e1e] active:scale-95 text-white text-[11px] font-bold py-2 px-3 rounded-full shadow transition">
+          Print
+        </button>
+        <button type="button" onclick="previewScanModeFromModal()"
+          class="bg-[#555888] hover:bg-[#464973] active:scale-95 text-white text-[11px] font-bold py-2 px-3 rounded-full shadow transition">
+          Preview Check-In
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Printable Door Sign Sheet (Only visible when printing) -->
+  <div id="qr-print-sheet" class="hidden">
+    <div style="border: 3px solid #232323; border-radius: 24px; padding: 36px; text-align: center; max-width: 480px; margin: 0 auto;">
+      <div style="font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #555888;">Valley View Ward • 2nd Hour</div>
+      <h1 id="print-sign-title" style="font-family: Georgia, serif; font-style: italic; font-size: 32px; font-weight: 900; margin: 8px 0 6px; color: #232323;">Sunday School</h1>
+      <p style="font-size: 15px; color: #444444; margin-bottom: 24px;">Scan with your phone camera or tap your phone here to check in</p>
+      <div id="print-qrcode-canvas" style="display: flex; justify-content: center; margin: 0 auto 20px;"></div>
+      <div id="print-sign-url" style="font-size: 10px; color: #666666; word-break: break-all;"></div>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- MODAL 2: LOG VISITOR POPUP (#5c7c4c Sage Green per Figma Modal 5)     -->
+  <!-- ===================================================================== -->
+  <div id="modal-add-visitor" class="hidden fixed inset-0 z-50 bg-black/75 backdrop-blur-sm flex items-center justify-center p-4" onclick="onModalBackdropClick(event, 'modal-add-visitor')">
+    <div class="w-full max-w-[345px] bg-[#5c7c4c] rounded-[16px] p-5 shadow-2xl text-white relative">
+      <div class="flex items-center justify-between mb-3">
+        <div>
+          <h3 class="text-[15px] font-bold text-white">Log a Class Visitor</h3>
+          <p id="add-visitor-subtitle" class="text-[11px] text-[#e3efe0]">Sunday School</p>
+        </div>
+        <button type="button" onclick="closeAddVisitorModal()" aria-label="Close Add Visitor Modal" class="text-white/80 hover:text-white p-1">
+          <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+        </button>
+      </div>
+
+      <form onsubmit="submitAdminVisitor(event)" class="space-y-2.5 text-left">
+        <div>
+          <input id="admin-vis-name" type="text" required placeholder="Visitor Full Name *"
+            class="w-full bg-[#f5f5f5] text-[#232323] placeholder-[#757575] text-[12.5px] font-semibold rounded-[10px] px-3 py-2.5 focus:outline-none">
+        </div>
+        <div>
+          <input id="admin-vis-phone" type="tel" placeholder="Phone Number"
+            class="w-full bg-[#f5f5f5] text-[#232323] placeholder-[#757575] text-[12.5px] font-semibold rounded-[10px] px-3 py-2.5 focus:outline-none">
+        </div>
+        <div>
+          <input id="admin-vis-email" type="email" placeholder="Email"
+            class="w-full bg-[#f5f5f5] text-[#232323] placeholder-[#757575] text-[12.5px] font-semibold rounded-[10px] px-3 py-2.5 focus:outline-none">
+        </div>
+        <div>
+          <input id="admin-vis-notes" type="text" placeholder="Notes (Visiting / New move-in)"
+            class="w-full bg-[#f5f5f5] text-[#232323] placeholder-[#757575] text-[12.5px] font-semibold rounded-[10px] px-3 py-2.5 focus:outline-none">
+        </div>
+        <div class="flex items-center justify-end gap-2 pt-2">
+          <button type="button" onclick="closeAddVisitorModal()"
+            class="bg-white/20 hover:bg-white/30 text-white text-[12px] font-semibold px-4 py-2 rounded-full transition">
+            Cancel
+          </button>
+          <button type="submit" id="admin-vis-submit"
+            class="bg-[#2e3d26] hover:bg-[#222e1c] active:scale-95 text-white text-[12px] font-bold px-5 py-2 rounded-full shadow transition">
+            Save Visitor
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- MODAL 3: BATCH CONFIRMATION MODAL (Replaces native confirm())         -->
+  <!-- ===================================================================== -->
+  <div id="modal-batch-confirm" class="hidden fixed inset-0 z-50 bg-black/75 backdrop-blur-sm flex items-center justify-center p-4" onclick="onModalBackdropClick(event, 'modal-batch-confirm')">
+    <div class="w-full max-w-[320px] bg-[#3d3d3d] border border-[#525252] rounded-[20px] p-5 shadow-2xl text-white space-y-3.5 text-center">
+      <h3 id="batch-confirm-title" class="serif-title text-[19px] text-white">Mark All Present?</h3>
+      <p id="batch-confirm-desc" class="text-[12px] text-[#cccccc] leading-relaxed"></p>
+      <div class="flex items-center justify-center gap-2.5 pt-1">
+        <button type="button" onclick="closeBatchConfirmModal()"
+          class="flex-1 bg-white/15 hover:bg-white/25 text-white text-[12px] font-semibold py-2 rounded-full transition">
+          Cancel
+        </button>
+        <button type="button" id="batch-confirm-btn" onclick="executeBatchConfirm()"
+          class="flex-1 bg-[#5c7c4c] hover:bg-[#4e6b40] text-white text-[12px] font-bold py-2 rounded-full shadow transition">
+          Confirm
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="app-toast" class="fixed top-16 left-1/2 -translate-x-1/2 z-50 bg-[#141414] border border-[#444444] text-white text-[12px] font-semibold px-4 py-2.5 rounded-full shadow-xl transition-all duration-300 opacity-0 pointer-events-none flex items-center gap-2">
+    <span class="w-2 h-2 rounded-full bg-[#638452]"></span>
+    <span id="app-toast-text">Saved</span>
+  </div>
+
+  <!-- Server-side Scan Mode pre-boot for Google Apps Script /exec?class=... QR links (inert JSON on GitHub Pages) -->
+  <script id="server-scan-boot" type="application/json"><?!= typeof scanBootJson !== 'undefined' ? scanBootJson : (typeof targetClass !== 'undefined' && targetClass ? JSON.stringify({ isScanMode: true, defaultClass: targetClass }) : '{}') ?></script>
+
+  <script>
+    // =========================================================================
+    // CONFIGURATION & ZERO-DATA SECURITY ARCHITECTURE
+    // =========================================================================
+    const APPS_SCRIPT_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbzqklYpvUI9-MxgHskE-X3zvIctPcxUtYHlkQoWT7jLA1XeYV1_aCQ-HCWOx4SJro-ahA/exec';
+    const SESSION_KEY = 'vv_2nd_hour_session_v2';
+    const LOCAL_BOOT_CACHE_KEY = 'vv_2nd_hour_boot_cache_v2';
+    const STORAGE_KEY_SCAN_USER = 'vv_2nd_hour_saved_user_v2';
+
+    // Updated Class Coloration & Display Labels matching Figma UI
+    const CLASS_THEMES = {
+      'Sunday School':     { bg: '#555888', title: 'Sunday School',      pill: 'Sunday School' },
+      'Elders Quorum':     { bg: '#9e4340', title: 'Elders Quorum',      pill: 'Elders Quorum' },
+      'Relief Society':    { bg: '#5c8d97', title: 'Relief Society',     pill: 'Relief Society' },
+      'Gospel Foundation': { bg: '#5c7c4c', title: 'Gospel Foundations', pill: 'Gospel Found.' },
+      'Temple Prep':       { bg: '#bfa15f', title: 'Temple Prep',        pill: 'Temple Prep' }
+    };
+
+    let auth = { token: '', email: '', name: '', calling: '' };
+    let authPendingEmail = '';
+    let lastBootAt = 0;
+    let deferredInstallPrompt = null;
+
+    let state = {
+      classes: ['Sunday School', 'Elders Quorum', 'Relief Society', 'Gospel Foundation', 'Temple Prep'],
+      dates: [],
+      currentClass: 'Sunday School',
+      currentDate: '',
+      adminTab: 'rollcall',
+      members: [],
+      rostersByClass: {},
+      changes: {},
+      filter: 'all',
+      search: '',
+      expandedMember: null,
+      memberNames: [],
+      memberInfoMap: {},
+      reportContacts: [],
+      visitorsData: { dateVisitors: [], frequentVisitors: [], allRecent: [] },
+      wardReport: null,
+      webAppUrl: APPS_SCRIPT_WEB_APP_URL,
+      githubPagesUrl: '',
+      isScanMode: false,
+      isPreviewingScan: false,
+      isCheckingInFriend: false,
+      scanRole: 'member',
+      pendingBatchPresent: true
+    };
+
+    // =========================================================================
+    // SAFE LOCALSTORAGE & SESSION HELPERS
+    // =========================================================================
+    function lsGet(k) {
+      try { return localStorage.getItem(k) || ''; } catch (e) { return ''; }
+    }
+    function lsSet(k, v) {
+      try {
+        if (v === null || v === undefined || v === '') localStorage.removeItem(k);
+        else localStorage.setItem(k, String(v));
+      } catch (e) {}
+    }
+
+    function loadSession() {
+      try {
+        const raw = localStorage.getItem(SESSION_KEY);
+        if (!raw) return;
+        const sess = JSON.parse(raw);
+        if (sess && sess.token && sess.email) {
+          auth = {
+            token: sess.token,
+            email: sess.email,
+            name: sess.name || '',
+            calling: sess.calling || 'Ward Leadership'
+          };
+        }
+      } catch (e) {}
+    }
+
+    function saveSession() {
+      try { localStorage.setItem(SESSION_KEY, JSON.stringify(auth)); } catch (e) {}
+    }
+
+    function clearPrivateLocalData() {
+      try {
+        localStorage.removeItem(SESSION_KEY);
+        localStorage.removeItem(LOCAL_BOOT_CACHE_KEY);
+        localStorage.removeItem('vv_2nd_hour_admin_key_v1');
+        localStorage.removeItem('vv_2nd_hour_api_url_v1');
+        localStorage.removeItem('vv_2nd_hour_boot_cache_v1');
+      } catch (e) {}
+    }
+
+    function persistBootCache() {
+      if (!auth.email) return;
+      try {
+        localStorage.setItem(LOCAL_BOOT_CACHE_KEY, JSON.stringify({
+          email: auth.email,
+          boot: {
+            classes: state.classes,
+            dates: state.dates,
+            defaultDate: state.currentDate,
+            defaultClass: state.currentClass,
+            memberNames: state.memberNames,
+            memberInfoMap: state.memberInfoMap,
+            reportContacts: state.reportContacts,
+            visitorsData: state.visitorsData,
+            rostersByClass: state.rostersByClass,
+            webAppUrl: state.webAppUrl,
+            githubPagesUrl: state.githubPagesUrl
+          }
+        }));
+      } catch (e) {}
+    }
+
+    function loadBootCacheLocal() {
+      try {
+        const raw = localStorage.getItem(LOCAL_BOOT_CACHE_KEY);
+        if (!raw) return null;
+        const parsed = JSON.parse(raw);
+        if (parsed && parsed.email === auth.email && parsed.boot && Array.isArray(parsed.boot.dates)) {
+          return parsed.boot;
+        }
+      } catch (e) {}
+      return null;
+    }
+
+    function extractFirstNameClient(fullName) {
+      if (!fullName) return '';
+      const s = String(fullName).trim();
+      if (s.indexOf(',') > -1) {
+        const parts = s.split(',');
+        if (parts.length > 1) {
+          const f = parts[1].trim().split(' ')[0];
+          if (f) return f;
+        }
+      }
+      return s.split(' ')[0];
+    }
+
+    function escapeHtml(str) {
+      return String(str == null ? '' : str).replace(/[&<>"']/g, m => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+      })[m]);
+    }
+
+    function getClassTitle(c) {
+      return (CLASS_THEMES[c] && CLASS_THEMES[c].title) || c;
+    }
+
+    function getClassPillLabel(c) {
+      return (CLASS_THEMES[c] && CLASS_THEMES[c].pill) || c;
+    }
+
+    // =========================================================================
+    // UNIFIED SERVER BRIDGE
+    // =========================================================================
+    function isAppsScriptEnv() {
+      return typeof google !== 'undefined' && google.script && google.script.run;
+    }
+
+    function setSyncBadge(status, label) {
+      const dot = document.getElementById('sync-dot');
+      const txt = document.getElementById('header-leader-label');
+      if (!dot || !txt) return;
+      txt.textContent = label || (auth.name ? extractFirstNameClient(auth.name) : 'Leader');
+      if (status === 'live') dot.className = 'w-2 h-2 rounded-full bg-[#638452] shrink-0';
+      else if (status === 'loading') dot.className = 'w-2 h-2 rounded-full bg-[#bfa15f] animate-pulse shrink-0';
+      else dot.className = 'w-2 h-2 rounded-full bg-[#9e4340] shrink-0';
+    }
+
+    function api(action, payload) {
+      const body = Object.assign({}, payload || {}, { action: action, token: auth.token });
+
+      if (isAppsScriptEnv()) {
+        return new Promise((resolve, reject) => {
+          google.script.run
+            .withSuccessHandler(res => {
+              if (res && res.code === 'auth' && action !== 'verifyCode' && action !== 'requestCode') {
+                handleSessionExpired(res.message);
+                const e = new Error(res.message || 'Please sign in again.'); e.noRetry = true;
+                reject(e);
+                return;
+              }
+              resolve(res);
+            })
+            .withFailureHandler(err => reject(err))
+            .callServerApi(body);
+        });
+      }
+
+      return fetch(APPS_SCRIPT_WEB_APP_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(body)
+      })
+        .then(function(r) { return r.json(); })
+        .then(function(res) {
+          if (res && res.code === 'auth' && action !== 'verifyCode' && action !== 'requestCode') {
+            handleSessionExpired(res.message);
+            const e = new Error(res.message || 'Please sign in again.'); e.noRetry = true;
+            throw e;
+          }
+          return res;
+        });
+    }
+
+
+    // =========================================================================
+    // RELIABLE DELIVERY: RETRY WITH BACKOFF + LOCAL OUTBOX (busy-server safe)
+    // =========================================================================
+    const OUTBOX_KEY = 'vv_2nd_hour_outbox_v1';
+    const OUTBOX_MAX_AGE_MS = 3 * 24 * 3600 * 1000;
+    const outboxInflight = {};
+    const PERMANENT_CODES = { invalid: 1, auth: 1, bad_email: 1, bad_code: 1, bad_request: 1, mail_auth: 1 };
+
+    function apiRetry(action, payload, opts) {
+      const tries = (opts && opts.tries) || 5;
+      let attempt = 0;
+      function once() {
+        attempt++;
+        return api(action, payload)
+          .then(function(res) {
+            if (res && res.ok === false && !PERMANENT_CODES[res.code]) {
+              const e = new Error(res.message || 'Server busy'); throw e;
+            }
+            return res;
+          })
+          .catch(function(err) {
+            if (attempt >= tries || (err && err.noRetry)) throw err;
+            const base = Math.min(15000, 700 * Math.pow(2, attempt - 1));
+            const wait = base / 2 + Math.random() * base;       // jitter spreads a crowd out
+            return new Promise(function(r) { setTimeout(r, wait); }).then(once);
+          });
+      }
+      return once();
+    }
+
+    function outboxLoad() {
+      try { return JSON.parse(localStorage.getItem(OUTBOX_KEY) || '[]') || []; } catch (e) { return []; }
+    }
+    function outboxSave(list) {
+      try {
+        if (list.length) localStorage.setItem(OUTBOX_KEY, JSON.stringify(list));
+        else localStorage.removeItem(OUTBOX_KEY);
+      } catch (e) {}
+    }
+    function outboxRemove(id) { outboxSave(outboxLoad().filter(function(x) { return x.id !== id; })); }
+
+    // Sends a check-in and keeps it in the outbox until the server confirms it.
+    // onStatus(kind, res): 'saved' | 'invalid' | 'pending'
+    function attemptSend(id, action, payload, onStatus) {
+      if (outboxInflight[id]) return Promise.resolve(null);
+      outboxInflight[id] = true;
+      return apiRetry(action, payload, { tries: 6 })
+        .then(function(res) {
+          if (res && res.ok === false) {          // permanent rejection (e.g. unknown member)
+            outboxRemove(id);
+            if (onStatus) onStatus('invalid', res);
+            return res;
+          }
+          outboxRemove(id);
+          if (onStatus) onStatus('saved', res);
+          return res;
+        })
+        .catch(function(err) {
+          if (onStatus) onStatus('pending', err);  // stays in outbox; retried on next open / reconnect
+          return null;
+        })
+        .then(function(r) { delete outboxInflight[id]; return r; });
+    }
+
+    function sendReliable(action, payload, onStatus) {
+      const id = Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
+      const list = outboxLoad();
+      list.push({ id: id, action: action, payload: payload, t: Date.now() });
+      outboxSave(list);
+      return attemptSend(id, action, payload, onStatus);
+    }
+
+    function flushOutbox() {
+      const now = Date.now();
+      const list = outboxLoad().filter(function(x) { return x && x.id && now - (x.t || 0) < OUTBOX_MAX_AGE_MS; });
+      outboxSave(list);
+      list.forEach(function(x, i) {
+        setTimeout(function() { attemptSend(x.id, x.action, x.payload, null); }, i * 400 + Math.random() * 600);
+      });
+    }
+
+    function setScanSyncStatus(kind) {
+      let el = document.getElementById('scan-sync-status');
+      const detail = document.getElementById('scan-success-detail');
+      if (!el && detail) {
+        el = document.createElement('p');
+        el.id = 'scan-sync-status';
+        el.className = 'text-[11px] text-[#e3efe0] mt-1.5 font-semibold';
+        detail.insertAdjacentElement('afterend', el);
+      }
+      if (!el) return;
+      el.textContent =
+        kind === 'saved' ? '✓ Saved to the roll' :
+        kind === 'invalid' ? 'Could not save — please tell a leader' :
+        kind === 'pending' ? 'Weak connection — still trying in the background' :
+        'Saving…';
+    }
+
+    // =========================================================================
+    // SIGN-IN SCREEN & 90-DAY SESSION FLOW
+    // =========================================================================
+    function setAuthMsg(text, good) {
+      const el = document.getElementById('auth-msg');
+      if (!el) return;
+      el.textContent = text || '';
+      el.className = 'text-[11.5px] leading-snug min-h-[16px] ' + (good ? 'text-[#b9dcc2]' : 'text-[#f0b4b0]');
+    }
+
+    function setAuthBusy(busy) {
+      ['auth-send-btn', 'auth-verify-btn'].forEach(function(id) {
+        const b = document.getElementById(id);
+        if (b) { b.disabled = busy; b.style.opacity = busy ? '0.6' : '1'; }
+      });
+    }
+
+    function authShowStep(step) {
+      document.getElementById('auth-step-email').classList.toggle('hidden', step !== 'email');
+      document.getElementById('auth-step-code').classList.toggle('hidden', step !== 'code');
+    }
+
+    function showAuthGate(message) {
+      document.getElementById('auth-gate').classList.remove('hidden');
+      authShowStep('email');
+      setAuthMsg(message || '', false);
+      const em = document.getElementById('auth-email');
+      if (em) setTimeout(function() { em.focus(); }, 60);
+      renderInstallHints();
+    }
+
+    function hideAuthGate() {
+      document.getElementById('auth-gate').classList.add('hidden');
+    }
+
+    function authSendCode() {
+      const email = String(document.getElementById('auth-email').value || '').trim().toLowerCase();
+      if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+        setAuthMsg('Enter the email address listed for you in Report Contacts.', false);
+        return;
+      }
+      setAuthBusy(true);
+      setAuthMsg('Sending your 6-digit code…', true);
+      api('requestCode', { email: email })
+        .then(function(res) {
+          if (!res || !res.ok) {
+            setAuthMsg((res && res.message) || 'Could not send a code. Please try again.', false);
+            return;
+          }
+          authPendingEmail = email;
+          authShowStep('code');
+          setAuthMsg('If listed in Report Contacts, a 6-digit code is on its way.', true);
+          const c = document.getElementById('auth-code');
+          if (c) { c.value = ''; setTimeout(function() { c.focus(); }, 60); }
+        })
+        .catch(function() {
+          setAuthMsg('Connection error. Make sure Code.gs is updated and deployed in Apps Script.', false);
+        })
+        .then(function() { setAuthBusy(false); });
+    }
+
+    function authVerifyCode() {
+      const code = String(document.getElementById('auth-code').value || '').replace(/\D/g, '');
+      if (code.length !== 6) {
+        setAuthMsg('Enter the 6-digit code from your email.', false);
+        return;
+      }
+      setAuthBusy(true);
+      setAuthMsg('Verifying code…', true);
+      api('verifyCode', { email: authPendingEmail, code: code })
+        .then(function(res) {
+          if (!res || !res.ok) {
+            setAuthMsg((res && res.message) || 'That code did not work.', false);
+            return;
+          }
+          auth = {
+            token: res.token,
+            email: res.me.email,
+            name: res.me.name,
+            calling: res.me.calling || 'Ward Leadership'
+          };
+          saveSession();
+          hideAuthGate();
+          showToast('Signed in as ' + auth.name);
+          return refreshBoot(true);
+        })
+        .catch(function() {
+          setAuthMsg('No connection. Please check your internet and try again.', false);
+        })
+        .then(function() { setAuthBusy(false); });
+    }
+
+    function authBackToEmail() {
+      authShowStep('email');
+      setAuthMsg('', false);
+    }
+
+    function handleSessionExpired(msg) {
+      resetSignedOutState();
+      showAuthGate(msg || 'Your 90-day session expired. Please sign in again.');
+    }
+
+    function resetSignedOutState() {
+      clearPrivateLocalData();
+      auth = { token: '', email: '', name: '', calling: '' };
+      state.dates = [];
+      state.members = [];
+      state.rostersByClass = {};
+      state.changes = {};
+      state.memberNames = [];
+      state.memberInfoMap = {};
+      state.reportContacts = [];
+      state.visitorsData = { dateVisitors: [], frequentVisitors: [], allRecent: [] };
+      state.wardReport = null;
+      const accModal = document.getElementById('modal-account');
+      if (accModal) accModal.classList.add('hidden');
+      try {
+        renderDateDropdown();
+        renderClassPills();
+        renderAllAdminViews();
+      } catch (e) {}
+    }
+
+    function signOut() {
+      resetSignedOutState();
+      showAuthGate();
+    }
+
+    function showAccountModal() {
+      if (!auth.token) {
+        showAuthGate();
+        return;
+      }
+      document.getElementById('account-name').textContent = auth.name || auth.email;
+      document.getElementById('account-email').textContent = auth.email;
+      document.getElementById('account-calling').textContent = auth.calling || 'Ward Leadership';
+      renderInstallHints();
+      document.getElementById('modal-account').classList.remove('hidden');
+    }
+
+    function closeAccountModal() {
+      document.getElementById('modal-account').classList.add('hidden');
+    }
+
+    function isStandaloneApp() {
+      return (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) || window.navigator.standalone === true;
+    }
+
+    function renderInstallHints() {
+      let html = '';
+      if (!isStandaloneApp() && deferredInstallPrompt) {
+        html = '<button type="button" onclick="promptInstall()" class="w-full bg-[#5c8d97] hover:bg-[#4f7d86] text-white font-bold text-[12px] py-2 rounded-full">Install App on This Phone</button>';
+      }
+      document.querySelectorAll('.install-hint').forEach(function(el) {
+        el.innerHTML = html;
+        el.classList.toggle('hidden', !html);
+      });
+    }
+
+    function promptInstall() {
+      if (!deferredInstallPrompt) return;
+      deferredInstallPrompt.prompt();
+      deferredInstallPrompt.userChoice.then(function() {
+        deferredInstallPrompt = null;
+        renderInstallHints();
+      });
+    }
+
+    window.addEventListener('beforeinstallprompt', function(e) {
+      e.preventDefault();
+      deferredInstallPrompt = e;
+      renderInstallHints();
+    });
+    window.addEventListener('appinstalled', function() {
+      deferredInstallPrompt = null;
+      renderInstallHints();
+    });
+
+    // =========================================================================
+    // INITIALIZATION & URL PARAMETER ROUTING
+    // =========================================================================
+    function initApp() {
+      try {
+        localStorage.removeItem('vv_2nd_hour_admin_key_v1');
+        localStorage.removeItem('vv_2nd_hour_api_url_v1');
+        localStorage.removeItem('vv_2nd_hour_boot_cache_v1');
+      } catch (e) {}
+
+      if (!isAppsScriptEnv() && 'serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) {
+        navigator.serviceWorker.register('./sw.js').catch(function() {});
+      }
+
+      flushOutbox();
+      window.addEventListener('online', flushOutbox);
+      document.addEventListener('visibilitychange', function() {
+        if (document.visibilityState === 'visible') flushOutbox();
+      });
+
+      document.addEventListener('click', function(e) {
+        const wrap = document.getElementById('date-dropdown-wrapper');
+        const menu = document.getElementById('date-dropdown-menu');
+        if (menu && wrap && !wrap.contains(e.target)) {
+          menu.classList.add('hidden');
+        }
+      });
+
+      const serverScanBoot = readServerScanBoot();
+      const urlClass = detectInitialScanClass(serverScanBoot);
+
+      if (urlClass) {
+        enterScanMode(urlClass, serverScanBoot);
+        return;
+      }
+
+      // Fallback for Google Apps Script iframe if opened via /exec?class=... without pre-baked scanBootJson
+      if (isAppsScriptEnv() && google.script.url && typeof google.script.url.getLocation === 'function') {
+        google.script.url.getLocation(function(loc) {
+          const p = (loc && loc.parameter) || {};
+          const raw = String(p.class || p.className || '').trim();
+          const norm = normalizeClassNameClient(raw);
+          if (norm) {
+            enterScanMode(norm, null);
+          } else {
+            bootAdminMode();
+          }
+        });
+        return;
+      }
+
+      bootAdminMode();
+    }
+
+    function normalizeClassNameClient(raw) {
+      const s = String(raw || '').trim();
+      const low = s.toLowerCase();
+      if (!low) return '';
+      if (low === 'sunday school' || low === 'ss') return 'Sunday School';
+      if (low === 'elders quorum' || low === 'eq') return 'Elders Quorum';
+      if (low === 'relief society' || low === 'rs') return 'Relief Society';
+      if (low === 'gospel foundation' || low === 'gospel foundations' || low === 'gospel found.' || low === 'gospel found' || low === 'gf') return 'Gospel Foundation';
+      if (low === 'temple prep' || low === 'temple preparation' || low === 'tp') return 'Temple Prep';
+      return state.classes.includes(s) ? s : '';
+    }
+
+    function readServerScanBoot() {
+      try {
+        const el = document.getElementById('server-scan-boot');
+        if (!el) return null;
+        const raw = String(el.textContent || '').trim();
+        if (!raw || raw.charAt(0) !== '{') return null;
+        const parsed = JSON.parse(raw);
+        if (parsed && (parsed.isScanMode || parsed.defaultClass || parsed.targetClass)) {
+          return parsed;
+        }
+      } catch (e) {}
+      return null;
+    }
+
+    function detectInitialScanClass(serverScanBoot) {
+      try {
+        const params = new URLSearchParams(window.location.search);
+        const fromSearch = normalizeClassNameClient(params.get('class') || params.get('className') || '');
+        if (fromSearch) return fromSearch;
+      } catch (e) {}
+
+      try {
+        const hashRaw = String(window.location.hash || '').replace(/^#\??/, '');
+        if (hashRaw.indexOf('class=') !== -1) {
+          const hParams = new URLSearchParams(hashRaw);
+          const fromHash = normalizeClassNameClient(hParams.get('class') || hParams.get('className') || '');
+          if (fromHash) return fromHash;
+        }
+      } catch (e) {}
+
+      if (serverScanBoot && (serverScanBoot.isScanMode || serverScanBoot.defaultClass || serverScanBoot.targetClass)) {
+        const fromServer = normalizeClassNameClient(serverScanBoot.defaultClass || serverScanBoot.targetClass || '');
+        if (fromServer) return fromServer;
+      }
+      return '';
+    }
+
+    function enterScanMode(targetClass, preloadedBoot) {
+      state.isScanMode = true;
+      state.currentClass = targetClass;
+      try {
+        document.title = getClassTitle(targetClass) + ' Check-In — Valley View 2nd Hour';
+      } catch (e) {}
+
+      const adminApp = document.getElementById('admin-app');
+      if (adminApp) adminApp.remove();
+      const authGate = document.getElementById('auth-gate');
+      if (authGate) authGate.remove();
+      const rightSlot = document.getElementById('header-right-slot');
+      if (rightSlot) rightSlot.classList.add('hidden');
+      document.getElementById('scan-app').classList.remove('hidden');
+
+      if (preloadedBoot && Array.isArray(preloadedBoot.dates) && preloadedBoot.dates.length) {
+        applyBootData(preloadedBoot);
+        initScanView(true);
+        return;
+      }
+
+      initScanView(false);
+      apiRetry('scanBoot', { className: state.currentClass }, { tries: 5 })
+        .then(function(live) {
+          if (live && live.ok && Array.isArray(live.dates)) {
+            applyBootData(live);
+            initScanView(true);
+          }
+        })
+        .catch(function() {
+          showToast('Could not reach check-in server. Please check connection.');
+        });
+    }
+
+    function bootAdminMode() {
+      loadSession();
+      renderInstallHints();
+
+      document.addEventListener('visibilitychange', function() {
+        if (document.visibilityState === 'visible' && auth.token && Date.now() - lastBootAt > 60000) {
+          refreshBoot(false);
+        }
+      });
+
+      if (!auth.token) {
+        renderDateDropdown();
+        renderClassPills();
+        renderAllAdminViews();
+        showAuthGate();
+      } else {
+        setSyncBadge('live', extractFirstNameClient(auth.name) || 'Leader');
+        const cached = loadBootCacheLocal();
+        if (cached) applyBootData(cached);
+        else {
+          renderDateDropdown();
+          renderClassPills();
+          renderAllAdminViews();
+        }
+        refreshBoot(false);
+      }
+    }
+
+    function refreshBoot(forceToast) {
+      if (!auth.token) return Promise.resolve();
+      setSyncBadge('loading', 'Syncing...');
+      return api('boot', { className: state.currentClass })
+        .then(function(res) {
+          if (!res || !res.ok) throw new Error((res && res.message) || 'Could not load attendance data.');
+          if (res.me) {
+            auth.name = res.me.name || auth.name;
+            auth.calling = res.me.calling || auth.calling;
+            saveSession();
+          }
+          lastBootAt = Date.now();
+          applyBootData(res);
+          persistBootCache();
+          setSyncBadge('live', extractFirstNameClient(auth.name) || 'Leader');
+          if (forceToast) showToast('Synced with Google Sheet!');
+        })
+        .catch(function(err) {
+          if (!auth.token) return;
+          setSyncBadge('offline', extractFirstNameClient(auth.name) || 'Offline');
+          showToast(state.members.length
+            ? 'Offline: showing your last saved roster'
+            : ((err && err.message) || 'Could not load attendance data.'));
+        });
+    }
+
+    function applyBootData(boot) {
+      if (!boot) return;
+      if (Array.isArray(boot.classes) && boot.classes.length) state.classes = boot.classes;
+      if (Array.isArray(boot.dates) && boot.dates.length) state.dates = boot.dates;
+      if (boot.defaultDate && !state.currentDate) state.currentDate = boot.defaultDate;
+      if (!state.currentDate && state.dates.length) state.currentDate = state.dates[0].key;
+      if (Array.isArray(boot.memberNames)) state.memberNames = boot.memberNames;
+      if (boot.memberInfoMap) state.memberInfoMap = boot.memberInfoMap;
+      if (Array.isArray(boot.reportContacts)) state.reportContacts = boot.reportContacts;
+      if (boot.visitorsData) state.visitorsData = boot.visitorsData;
+      if (boot.webAppUrl) state.webAppUrl = boot.webAppUrl;
+      if (boot.githubPagesUrl) state.githubPagesUrl = boot.githubPagesUrl;
+      if (boot.rostersByClass) state.rostersByClass = boot.rostersByClass;
+
+      if (boot.initialRoster && Array.isArray(boot.initialRoster.members)) {
+        const cls = boot.initialRoster.className || state.currentClass;
+        state.rostersByClass[cls] = boot.initialRoster;
+      }
+
+      const activeRoster = state.rostersByClass[state.currentClass] || boot.initialRoster || { members: [] };
+      state.members = (activeRoster.members || []).map(m => Object.assign({}, m));
+
+      if (!state.isScanMode) {
+        renderDateDropdown();
+        renderClassPills();
+        renderAllAdminViews();
+      }
+    }
+
+    // =========================================================================
+    // LEADERSHIP VIEW: CLASS & DATE SWITCHING + SLIDER + CUSTOM DROPDOWN
+    // =========================================================================
+    function onHeaderLogoClick() {
+      if (state.isPreviewingScan) {
+        exitScanPreview();
+        return;
+      }
+      if (!state.isScanMode) switchAdminTab('rollcall');
+    }
+
+    function renderDateDropdown() {
+      const sel = document.getElementById('date-select');
+      const labelEl = document.getElementById('date-dropdown-label');
+      const menuEl = document.getElementById('date-dropdown-menu');
+      if (!sel) return;
+
+      if (!state.dates.length) {
+        sel.innerHTML = '<option value="">Nov 8, 2026</option>';
+        if (labelEl) labelEl.textContent = 'Select Date';
+        if (menuEl) menuEl.innerHTML = '<div class="py-2 text-center text-[11.5px] text-[#666666]">Sign in to load dates</div>';
+        return;
+      }
+
+      sel.innerHTML = state.dates.map(d =>
+        `<option value="${escapeHtml(d.key)}" ${d.key === state.currentDate ? 'selected' : ''}>${escapeHtml(d.label)}</option>`
+      ).join('');
+
+      const curObj = state.dates.find(d => d.key === state.currentDate) || state.dates[0];
+      if (labelEl && curObj) labelEl.textContent = curObj.label;
+
+      if (menuEl) {
+        menuEl.innerHTML = state.dates.map(d => {
+          const active = d.key === state.currentDate;
+          return `<button type="button" onclick="selectCustomDate('${escapeHtml(d.key)}')"
+            class="w-full py-1.5 px-2.5 text-center text-[12px] font-bold rounded-[8px] transition block ${
+              active ? 'bg-[#555888] text-white' : 'text-[#232323] hover:bg-black/10'
+            }">${escapeHtml(d.label)}</button>`;
+        }).join('');
+      }
+    }
+
+    function toggleDateDropdown(event) {
+      if (event) event.stopPropagation();
+      const menu = document.getElementById('date-dropdown-menu');
+      if (!menu) return;
+      menu.classList.toggle('hidden');
+    }
+
+    function selectCustomDate(dateKey) {
+      const menu = document.getElementById('date-dropdown-menu');
+      if (menu) menu.classList.add('hidden');
+      onDateChange(dateKey);
+    }
+
+    function renderClassPills() {
+      const bar = document.getElementById('class-pills-bar');
+      if (!bar) return;
+      const theme = CLASS_THEMES[state.currentClass] || CLASS_THEMES['Sunday School'];
+      const hero = document.getElementById('hero-class-card');
+      if (hero) hero.style.backgroundColor = theme.bg;
+      const heading = document.getElementById('active-class-heading');
+      if (heading) heading.textContent = getClassTitle(state.currentClass);
+
+      bar.innerHTML = state.classes.map((c, idx) => {
+        const active = c === state.currentClass;
+        return `<button type="button" id="class-pill-btn-${idx}" onclick="selectClass('${escapeHtml(c)}', ${idx})"
+          class="px-3.5 py-1.5 rounded-full text-[11.5px] font-bold transition whitespace-nowrap shrink-0 ${
+            active
+              ? 'bg-[#f5f5f5] text-[#232323] shadow-md'
+              : 'bg-black/25 text-white/90 hover:bg-black/35'
+          }">${escapeHtml(getClassPillLabel(c))}</button>`;
+      }).join('');
+
+      updateClassSliderPositionByIndex();
+    }
+
+    function updateClassSliderPositionByIndex() {
+      const idx = Math.max(0, state.classes.indexOf(state.currentClass));
+      const maxIdx = Math.max(1, state.classes.length - 1);
+      const pct = (idx / maxIdx) * 160; // thumb width is ~38%, so 160% translateX reaches right edge
+      const thumb = document.getElementById('class-slider-thumb');
+      if (thumb) thumb.style.transform = `translateX(${pct}%)`;
+
+      const activeBtn = document.getElementById('class-pill-btn-' + idx);
+      if (activeBtn && activeBtn.scrollIntoView) {
+        try { activeBtn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' }); } catch (e) {}
+      }
+    }
+
+    function updateClassSliderThumb() {
+      const bar = document.getElementById('class-pills-bar');
+      const thumb = document.getElementById('class-slider-thumb');
+      if (!bar || !thumb) return;
+      const maxScroll = bar.scrollWidth - bar.clientWidth;
+      if (maxScroll <= 2) return;
+      const ratio = Math.max(0, Math.min(1, bar.scrollLeft / maxScroll));
+      thumb.style.transform = `translateX(${ratio * 160}%)`;
+    }
+
+    function onSliderTrackClick(event) {
+      const rect = event.currentTarget.getBoundingClientRect();
+      const ratio = Math.max(0, Math.min(0.99, (event.clientX - rect.left) / rect.width));
+      const idx = Math.floor(ratio * state.classes.length);
+      if (state.classes[idx]) selectClass(state.classes[idx], idx);
+    }
+
+    function selectClass(className) {
+      if (className === state.currentClass) return;
+      state.currentClass = className;
+      state.changes = {};
+      state.expandedMember = null;
+      updateUnsavedBar();
+      renderClassPills();
+      fetchClassRoster();
+    }
+
+    function onDateChange(newDate) {
+      if (!newDate || newDate === state.currentDate) return;
+      state.currentDate = newDate;
+      state.changes = {};
+      state.expandedMember = null;
+      updateUnsavedBar();
+      renderDateDropdown();
+      fetchClassRoster();
+    }
+
+    function stepDate(delta) {
+      const idx = state.dates.findIndex(d => d.key === state.currentDate);
+      if (idx === -1) return;
+      const nextIdx = idx + delta;
+      if (nextIdx < 0 || nextIdx >= state.dates.length) return;
+      onDateChange(state.dates[nextIdx].key);
+    }
+
+    function fetchClassRoster() {
+      if (!auth.token) {
+        showAuthGate();
+        return;
+      }
+      if (state.rostersByClass && state.rostersByClass[state.currentClass] && state.rostersByClass[state.currentClass].dateStr === state.currentDate) {
+        state.members = (state.rostersByClass[state.currentClass].members || []).map(m => Object.assign({}, m));
+        renderAllAdminViews();
+      }
+
+      setSyncBadge('loading', 'Loading...');
+      api('getAttendanceData', { className: state.currentClass, dateStr: state.currentDate })
+        .then(res => {
+          if (res && res.ok && Array.isArray(res.members)) {
+            state.members = res.members;
+            state.rostersByClass[state.currentClass] = res;
+            persistBootCache();
+            renderAllAdminViews();
+            setSyncBadge('live', extractFirstNameClient(auth.name) || 'Leader');
+          }
+        })
+        .catch(() => {
+          setSyncBadge('offline', extractFirstNameClient(auth.name) || 'Offline');
+          renderAllAdminViews();
+        });
+
+      api('getVisitorsData', { dateStr: state.currentDate })
+        .then(vRes => {
+          if (vRes && vRes.ok && Array.isArray(vRes.dateVisitors)) {
+            state.visitorsData = vRes;
+            persistBootCache();
+            renderVisitorsViews();
+            updateTopStats();
+          }
+        })
+        .catch(() => {});
+    }
+
+    function renderAllAdminViews() {
+      updateTopStats();
+      renderRosterList();
+      renderDashboardInsights();
+      renderVisitorsViews();
+      renderReportContacts();
+      if (state.adminTab === 'reports') loadWardReport();
+    }
+
+    function getEffectiveAttended(member) {
+      if (Object.prototype.hasOwnProperty.call(state.changes, member.name)) {
+        return !!state.changes[member.name];
+      }
+      return !!member.attended;
+    }
+
+    function updateTopStats() {
+      const total = state.members.length;
+      let present = 0;
+      let sumRates = 0;
+      state.members.forEach(m => {
+        if (getEffectiveAttended(m)) present++;
+        sumRates += Number(m.rate || 0);
+      });
+      const dayRate = total ? Math.round((present / total) * 100) : 0;
+      const avgRate = total ? Math.round((sumRates / total) * 100) : 0;
+
+      document.getElementById('stat-present').textContent = present;
+      document.getElementById('stat-total').textContent = total;
+      document.getElementById('stat-day-rate').textContent = dayRate + '%';
+      document.getElementById('stat-avg-rate').textContent = 'YTD ' + avgRate + '%';
+
+      const vToday = (state.visitorsData && state.visitorsData.dateVisitors) ? state.visitorsData.dateVisitors.length : 0;
+      const vFreq = (state.visitorsData && state.visitorsData.frequentVisitors) ? state.visitorsData.frequentVisitors.length : 0;
+      document.getElementById('stat-visitors').textContent = vToday;
+      document.getElementById('stat-repeat-visitors').textContent = vFreq + ' repeat';
+    }
+
+    // =========================================================================
+    // TAB 1: ROLL CALL LIST & TOGGLES
+    // =========================================================================
+    function setFilter(f) {
+      state.filter = f;
+      ['all', 'present', 'absent', 'M', 'F'].forEach(k => {
+        const btn = document.getElementById('flt-' + k);
+        if (!btn) return;
+        if (k === f) {
+          btn.className = 'flt-chip px-3 py-1 rounded-full text-[11px] font-bold bg-[#5c8d97] text-white transition shrink-0';
+        } else {
+          btn.className = 'flt-chip px-3 py-1 rounded-full text-[11px] font-bold bg-[#2a2a2a] text-[#bdbdbd] hover:text-white transition shrink-0';
+        }
+      });
+      renderRosterList();
+    }
+
+    function clearSearch() {
+      const inp = document.getElementById('member-search');
+      if (inp) inp.value = '';
+      renderRosterList();
+    }
+
+    function renderRosterList() {
+      const container = document.getElementById('roster-list');
+      if (!container) return;
+      const q = (document.getElementById('member-search')?.value || '').trim().toLowerCase();
+      const clearBtn = document.getElementById('search-clear-btn');
+      if (clearBtn) clearBtn.classList.toggle('hidden', !q);
+
+      if (!auth.token && state.members.length === 0) {
+        container.innerHTML = `<div class="py-8 text-center text-[12.5px] text-[#666666] font-medium">Sign in with your Report Contacts email to load the class roster.</div>`;
+        return;
+      }
+
+      const filtered = state.members.filter(m => {
+        const here = getEffectiveAttended(m);
+        if (state.filter === 'present' && !here) return false;
+        if (state.filter === 'absent' && here) return false;
+        if (state.filter === 'M' && m.gender !== 'M') return false;
+        if (state.filter === 'F' && m.gender !== 'F') return false;
+        if (q) {
+          const hay = (m.name + ' ' + (m.phone || '') + ' ' + (m.email || '')).toLowerCase();
+          if (!hay.includes(q)) return false;
+        }
+        return true;
+      });
+
+      const sub = document.getElementById('rollcall-subtitle');
+      if (sub) sub.textContent = `Showing ${filtered.length} of ${state.members.length} members`;
+
+      if (filtered.length === 0) {
+        container.innerHTML = `<div class="py-8 text-center text-[12.5px] text-[#666666] font-medium">No members match this filter.</div>`;
+        return;
+      }
+
+      container.innerHTML = filtered.map(m => {
+        const here = getEffectiveAttended(m);
+        const pct = Math.round((Number(m.rate) || 0) * 100);
+        const isExpanded = state.expandedMember === m.name;
+        const safeNameAttr = escapeHtml(m.name).replace(/'/g, "\\'");
+        const rateColor = pct >= 60 ? 'text-[#2e5223]' : (pct >= 30 ? 'text-[#3e416e]' : 'text-[#9e4340]');
+        const genderChip = m.gender === 'M'
+          ? '<span class="text-[9.5px] font-bold px-1.5 py-0.5 rounded bg-[#555888]/15 text-[#3e416e]">Bro</span>'
+          : (m.gender === 'F' ? '<span class="text-[9.5px] font-bold px-1.5 py-0.5 rounded bg-[#9e4340]/15 text-[#9e4340]">Sis</span>' : '');
+
+        return `
+          <div class="py-2 px-1.5 transition ${here ? 'bg-[#5c7c4c]/12 rounded-[8px]' : ''}">
+            <div class="flex items-center justify-between gap-2">
+              <div class="flex items-center gap-2.5 min-w-0 flex-1 cursor-pointer" onclick="toggleAttendance('${safeNameAttr}')">
+                <div class="w-7 h-7 rounded-full flex items-center justify-center shrink-0 transition ${
+                  here ? 'bg-[#5c7c4c] text-white shadow-sm' : 'bg-white border-2 border-[#b5b5b5] text-transparent'
+                }">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                  </svg>
+                </div>
+                <div class="min-w-0 flex-1">
+                  <div class="flex items-center gap-1.5">
+                    <span class="text-[13px] font-bold text-[#232323] truncate">${escapeHtml(m.name)}</span>
+                    ${genderChip}
+                  </div>
+                  <div class="text-[10.5px] text-[#666666] flex items-center gap-2">
+                    <span class="font-semibold ${rateColor}">${pct}% YTD (${m.totalAttended || 0} wks)</span>
+                    ${m.phone ? `<span>• ${escapeHtml(m.phone)}</span>` : ''}
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-1 shrink-0">
+                <button type="button" onclick="toggleMemberDrawer('${safeNameAttr}', event)" aria-label="Contact Options"
+                  class="w-7 h-7 rounded-full hover:bg-black/10 text-[#555555] flex items-center justify-center transition">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                  </svg>
+                </button>
+                <button type="button" onclick="toggleAttendance('${safeNameAttr}')"
+                  class="px-3 py-1 rounded-full text-[11px] font-bold transition ${
+                    here
+                      ? 'bg-[#5c7c4c] text-white shadow-sm'
+                      : 'bg-[#e0e0e0] hover:bg-[#d2d2d2] text-[#444444]'
+                  }">
+                  ${here ? 'Present' : 'Absent'}
+                </button>
+              </div>
+            </div>
+
+            ${isExpanded ? `
+              <div class="mt-2 pt-2 border-t border-black/10 flex items-center justify-between gap-1.5 pl-9">
+                ${m.phone ? `
+                  <a href="tel:${escapeHtml(m.phone)}" class="flex-1 bg-[#5c7c4c] text-white text-[10.5px] font-bold py-1.5 rounded-full text-center shadow-sm">Call</a>
+                  <a href="sms:${escapeHtml(m.phone)}" class="flex-1 bg-[#5c8d97] text-white text-[10.5px] font-bold py-1.5 rounded-full text-center shadow-sm">Text</a>
+                ` : '<span class="text-[10.5px] text-[#777777]">No phone listed</span>'}
+                ${m.email ? `
+                  <a href="mailto:${escapeHtml(m.email)}" class="flex-1 bg-[#555888] text-white text-[10.5px] font-bold py-1.5 rounded-full text-center shadow-sm">Email</a>
+                ` : ''}
+              </div>
+            ` : ''}
+          </div>
+        `;
+      }).join('');
+    }
+
+    function toggleMemberDrawer(name, event) {
+      if (event) event.stopPropagation();
+      state.expandedMember = (state.expandedMember === name) ? null : name;
+      renderRosterList();
+    }
+
+    function toggleAttendance(memberName) {
+      const m = state.members.find(x => x.name === memberName);
+      if (!m) return;
+      const nextVal = !getEffectiveAttended(m);
+      if (nextVal === !!m.attended) {
+        delete state.changes[memberName];
+      } else {
+        state.changes[memberName] = nextVal;
+      }
+      updateUnsavedBar();
+      updateTopStats();
+      renderRosterList();
+      renderDashboardInsights();
+    }
+
+    function openBatchConfirmModal(markPresent) {
+      if (!auth.token) {
+        showAuthGate();
+        return;
+      }
+      state.pendingBatchPresent = !!markPresent;
+      document.getElementById('batch-confirm-title').textContent = markPresent ? 'Mark All Present?' : 'Clear All Checkmarks?';
+      document.getElementById('batch-confirm-desc').textContent = markPresent
+        ? `Mark all ${state.members.length} members in ${getClassTitle(state.currentClass)} as Present for ${state.currentDate}?`
+        : `Clear all attendance checkmarks in ${getClassTitle(state.currentClass)} for ${state.currentDate}?`;
+      const btn = document.getElementById('batch-confirm-btn');
+      btn.className = markPresent
+        ? 'flex-1 bg-[#5c7c4c] hover:bg-[#4e6b40] text-white text-[12px] font-bold py-2 rounded-full shadow transition'
+        : 'flex-1 bg-[#9e4340] hover:bg-[#8d3936] text-white text-[12px] font-bold py-2 rounded-full shadow transition';
+      document.getElementById('modal-batch-confirm').classList.remove('hidden');
+    }
+
+    function closeBatchConfirmModal() {
+      document.getElementById('modal-batch-confirm').classList.add('hidden');
+    }
+
+    function executeBatchConfirm() {
+      const target = state.pendingBatchPresent;
+      state.members.forEach(m => {
+        if (!!m.attended === target) delete state.changes[m.name];
+        else state.changes[m.name] = target;
+      });
+      closeBatchConfirmModal();
+      updateUnsavedBar();
+      updateTopStats();
+      renderRosterList();
+      renderDashboardInsights();
+    }
+
+    function discardChanges() {
+      state.changes = {};
+      updateUnsavedBar();
+      updateTopStats();
+      renderRosterList();
+      renderDashboardInsights();
+      showToast('Changes discarded');
+    }
+
+    function updateUnsavedBar() {
+      const count = Object.keys(state.changes).length;
+      const bar = document.getElementById('unsaved-bar');
+      const label = document.getElementById('unsaved-count');
+      if (!bar || !label) return;
+      if (count > 0) {
+        bar.classList.remove('hidden');
+        label.textContent = `${count} unsaved change${count === 1 ? '' : 's'}`;
+      } else {
+        bar.classList.add('hidden');
+      }
+    }
+
+    function commitChanges() {
+      const count = Object.keys(state.changes).length;
+      if (!count) return;
+      if (!auth.token) {
+        showAuthGate('Please sign in to save attendance changes.');
+        return;
+      }
+      const btn = document.getElementById('save-btn');
+      if (btn) {
+        btn.disabled = true;
+        btn.textContent = 'Saving...';
+      }
+
+      const payloadChanges = Object.assign({}, state.changes);
+      state.members.forEach(m => {
+        if (Object.prototype.hasOwnProperty.call(payloadChanges, m.name)) {
+          m.attended = !!payloadChanges[m.name];
+        }
+      });
+      state.changes = {};
+      updateUnsavedBar();
+      updateTopStats();
+      renderRosterList();
+
+      api('saveAttendanceData', {
+        className: state.currentClass,
+        dateStr: state.currentDate,
+        changes: payloadChanges
+      })
+        .then(res => {
+          if (!res || !res.ok) throw new Error((res && res.message) || 'Save failed');
+          persistBootCache();
+          setSyncBadge('live', extractFirstNameClient(auth.name) || 'Leader');
+          showToast(`Saved ${getClassTitle(state.currentClass)} attendance!`);
+        })
+        .catch(err => {
+          showToast((err && err.message) || 'Could not save to Google Sheet.');
+        })
+        .finally(() => {
+          if (btn) {
+            btn.disabled = false;
+            btn.textContent = 'Save to Sheet';
+          }
+        });
+    }
+
+    // =========================================================================
+    // TAB 2: DASHBOARD & MINISTERING OUTREACH
+    // =========================================================================
+    function renderDashboardInsights() {
+      const total = state.members.length || 1;
+      let high = 0, mid = 0, low = 0, zero = 0;
+      const outreach = [];
+
+      state.members.forEach(m => {
+        const r = Number(m.rate) || 0;
+        const here = getEffectiveAttended(m);
+        if (r >= 0.6) high++;
+        else if (r >= 0.3) mid++;
+        else if (r > 0 || here) low++;
+        else zero++;
+
+        if (!here && r < 0.35) {
+          outreach.push(m);
+        }
+      });
+
+      document.getElementById('tier-high').textContent = `${high} (${Math.round((high / total) * 100)}%)`;
+      document.getElementById('tier-mid').textContent = `${mid} (${Math.round((mid / total) * 100)}%)`;
+      document.getElementById('tier-low').textContent = `${low} (${Math.round((low / total) * 100)}%)`;
+      document.getElementById('tier-zero').textContent = `${zero} (${Math.round((zero / total) * 100)}%)`;
+
+      document.getElementById('bar-high').style.width = `${Math.round((high / total) * 100)}%`;
+      document.getElementById('bar-mid').style.width = `${Math.round((mid / total) * 100)}%`;
+      document.getElementById('bar-low').style.width = `${Math.round((low / total) * 100)}%`;
+      document.getElementById('bar-zero').style.width = `${Math.round((zero / total) * 100)}%`;
+
+      document.getElementById('outreach-count-badge').textContent = outreach.length;
+      const listEl = document.getElementById('outreach-list');
+      if (!listEl) return;
+
+      if (outreach.length === 0) {
+        listEl.innerHTML = `<div class="py-6 text-center text-[12px] text-[#555555]">No outreach items to display.</div>`;
+        return;
+      }
+
+      listEl.innerHTML = outreach.slice(0, 45).map(m => {
+        const firstName = extractFirstNameClient(m.name);
+        const smsBody = encodeURIComponent(`Hi ${firstName}! We missed you in ${getClassTitle(state.currentClass)} today and hope you're having a great Sunday!`);
+        return `
+          <div class="py-2 px-1.5 flex items-center justify-between gap-2">
+            <div class="min-w-0">
+              <div class="text-[12.5px] font-bold text-[#232323] truncate">${escapeHtml(m.name)}</div>
+              <div class="text-[10.5px] text-[#666666]">${Math.round((Number(m.rate) || 0) * 100)}% YTD • ${escapeHtml(m.phone || 'No phone')}</div>
+            </div>
+            <div class="flex items-center gap-1.5 shrink-0">
+              ${m.phone ? `
+                <a href="sms:${escapeHtml(m.phone)}?body=${smsBody}"
+                   class="bg-[#5c8d97] hover:bg-[#4e7b84] text-white text-[10.5px] font-bold px-3 py-1 rounded-full shadow-sm">
+                  Text
+                </a>
+                <a href="tel:${escapeHtml(m.phone)}"
+                   class="bg-[#5c7c4c] hover:bg-[#4e6b40] text-white text-[10.5px] font-bold px-3 py-1 rounded-full shadow-sm">
+                  Call
+                </a>
+              ` : ''}
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // =========================================================================
+    // TAB 3: VISITORS TRACKER & MODAL
+    // =========================================================================
+    function renderVisitorsViews() {
+      const vData = state.visitorsData || { dateVisitors: [], frequentVisitors: [] };
+      const todayList = vData.dateVisitors || [];
+      const freqList = vData.frequentVisitors || [];
+
+      document.getElementById('visitors-today-badge').textContent = todayList.length;
+      document.getElementById('visitors-repeat-badge').textContent = freqList.length;
+
+      const todayEl = document.getElementById('visitors-today-list');
+      if (todayEl) {
+        if (todayList.length === 0) {
+          todayEl.innerHTML = `<div class="py-5 text-center text-[12px] text-[#666666]">No visitors logged for ${escapeHtml(state.currentDate || 'this Sunday')} yet.</div>`;
+        } else {
+          todayEl.innerHTML = todayList.map(v => {
+            const cTheme = CLASS_THEMES[v.className] || CLASS_THEMES['Sunday School'];
+            return `
+            <div class="py-2 flex items-center justify-between gap-2">
+              <div class="min-w-0">
+                <div class="flex items-center gap-1.5">
+                  <span class="text-[13px] font-bold text-[#232323] truncate">${escapeHtml(v.name)}</span>
+                  <span class="text-white text-[9.5px] font-bold px-2 py-0.5 rounded-full" style="background-color:${cTheme.bg}">${escapeHtml(getClassTitle(v.className || state.currentClass))}</span>
+                </div>
+                <div class="text-[10.5px] text-[#666666]">
+                  Visit #${v.totalVisits || 1} ${v.phone ? '• ' + escapeHtml(v.phone) : ''} ${v.notes ? '• ' + escapeHtml(v.notes) : ''}
+                </div>
+              </div>
+              ${v.phone ? `<a href="sms:${escapeHtml(v.phone)}" class="bg-[#5c8d97] text-white text-[10.5px] font-bold px-3 py-1 rounded-full shrink-0">Text</a>` : ''}
+            </div>
+          `}).join('');
+        }
+      }
+
+      const freqEl = document.getElementById('visitors-frequent-list');
+      if (freqEl) {
+        if (freqList.length === 0) {
+          freqEl.innerHTML = `<div class="py-5 text-center text-[12px] text-[#666666]">Visitors who attend 2+ Sundays will appear here automatically.</div>`;
+        } else {
+          freqEl.innerHTML = freqList.map(v => `
+            <div class="py-2 flex items-center justify-between gap-2">
+              <div class="min-w-0">
+                <div class="flex items-center gap-1.5">
+                  <span class="text-[13px] font-bold text-[#232323] truncate">${escapeHtml(v.name)}</span>
+                  <span class="bg-[#bfa15f] text-[#232323] text-[10px] font-extrabold px-2 py-0.5 rounded-full">${v.totalVisits} visits</span>
+                </div>
+                <div class="text-[10.5px] text-[#666666]">Last: ${escapeHtml(v.lastDate || '')} • ${escapeHtml(v.classes || '')}</div>
+              </div>
+              ${v.phone ? `<a href="sms:${escapeHtml(v.phone)}" class="bg-[#5c7c4c] text-white text-[10.5px] font-bold px-3 py-1 rounded-full shrink-0">Welcome Text</a>` : ''}
+            </div>
+          `).join('');
+        }
+      }
+    }
+
+    function openAddVisitorModal() {
+      if (!auth.token) {
+        showAuthGate();
+        return;
+      }
+      document.getElementById('add-visitor-subtitle').textContent = `${getClassTitle(state.currentClass)} • ${state.currentDate}`;
+      document.getElementById('modal-add-visitor').classList.remove('hidden');
+    }
+
+    function closeAddVisitorModal() {
+      document.getElementById('modal-add-visitor').classList.add('hidden');
+    }
+
+    function submitAdminVisitor(e) {
+      e.preventDefault();
+      const name = document.getElementById('admin-vis-name').value.trim();
+      const phone = document.getElementById('admin-vis-phone').value.trim();
+      const email = document.getElementById('admin-vis-email').value.trim();
+      const notes = document.getElementById('admin-vis-notes').value.trim();
+      if (!name) return;
+
+      const btn = document.getElementById('admin-vis-submit');
+      btn.disabled = true;
+      btn.textContent = 'Saving...';
+
+      const newVis = { name, className: state.currentClass, dateStr: state.currentDate, phone, email, notes, totalVisits: 1 };
+      state.visitorsData.dateVisitors = [newVis].concat(state.visitorsData.dateVisitors || []);
+      renderVisitorsViews();
+      updateTopStats();
+
+      sendReliable('selfCheckInVisitor', {
+        className: state.currentClass,
+        dateStr: state.currentDate,
+        visitorData: { name, phone, email, notes }
+      }, function(kind) {
+        if (kind === 'saved') showToast(`Logged visitor: ${name}`);
+        else if (kind === 'invalid') showToast('Could not save visitor to Sheet.');
+        else if (kind === 'pending') showToast('Weak connection — visitor will sync automatically.');
+      })
+        .finally(() => {
+          btn.disabled = false;
+          btn.textContent = 'Save Visitor';
+          document.getElementById('admin-vis-name').value = '';
+          document.getElementById('admin-vis-phone').value = '';
+          document.getElementById('admin-vis-email').value = '';
+          document.getElementById('admin-vis-notes').value = '';
+          closeAddVisitorModal();
+        });
+    }
+
+    // =========================================================================
+    // TAB 4: WEEKLY WARD REPORT & PRESIDENCY CONTACTS
+    // =========================================================================
+    function computeLocalWardReport() {
+      let totalPresent = 0;
+      const summary = state.classes.map(c => {
+        const r = (c === state.currentClass)
+          ? { members: state.members }
+          : (state.rostersByClass[c] || { members: [] });
+        const mems = r.members || [];
+        let p = 0;
+        mems.forEach(m => {
+          const here = (c === state.currentClass) ? getEffectiveAttended(m) : !!m.attended;
+          if (here) p++;
+        });
+        totalPresent += p;
+        return {
+          className: c,
+          present: p,
+          total: mems.length,
+          rate: mems.length ? p / mems.length : 0
+        };
+      });
+      const vToday = (state.visitorsData && state.visitorsData.dateVisitors) ? state.visitorsData.dateVisitors.length : 0;
+      return {
+        dateStr: state.currentDate,
+        summary: summary,
+        visitorsCount: vToday,
+        totalPresent: totalPresent
+      };
+    }
+
+    function loadWardReport() {
+      state.wardReport = computeLocalWardReport();
+      renderWardReportCards(state.wardReport);
+      if (!auth.token || !state.currentDate) return;
+
+      api('getWeeklyWardReport', { dateStr: state.currentDate })
+        .then(rep => {
+          if (rep && rep.ok && Array.isArray(rep.summary)) {
+            state.wardReport = rep;
+            renderWardReportCards(rep);
+          }
+        })
+        .catch(() => {});
+    }
+
+    function renderWardReportCards(rep) {
+      const container = document.getElementById('ward-report-cards');
+      if (!container || !rep) return;
+
+      const rowsHtml = (rep.summary || []).map(s => {
+        const pct = Math.round((s.rate || 0) * 100);
+        return `
+          <div class="py-2 flex items-center justify-between text-[12.5px]">
+            <span class="font-bold text-[#232323]">${escapeHtml(getClassTitle(s.className))}</span>
+            <div class="flex items-center gap-2">
+              <span class="font-extrabold text-[#232323]">${s.present} / ${s.total}</span>
+              <span class="bg-[#555888]/15 text-[#3e416e] text-[10.5px] font-bold px-2 py-0.5 rounded-full min-w-[44px] text-center">${pct}%</span>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      container.innerHTML = `
+        ${rowsHtml}
+        <div class="pt-2.5 mt-1 border-t-2 border-black/15 flex items-center justify-between text-[13.5px] font-extrabold text-[#232323]">
+          <span>Total 2nd Hour (+${rep.visitorsCount || 0} Visitors)</span>
+          <span class="bg-[#5c7c4c] text-white px-3 py-0.5 rounded-full">${(rep.totalPresent || 0) + (rep.visitorsCount || 0)}</span>
+        </div>
+      `;
+    }
+
+    function buildWardReportPlainText() {
+      const rep = state.wardReport || computeLocalWardReport();
+      const lines = [`Valley View Ward — 2nd Hour Attendance (${rep.dateStr || ''})`];
+      (rep.summary || []).forEach(s => {
+        const pct = Math.round((s.rate || 0) * 100);
+        lines.push(`• ${getClassTitle(s.className)}: ${s.present}/${s.total} (${pct}%)`);
+      });
+      lines.push(`• Visitors: ${rep.visitorsCount || 0}`);
+      lines.push(`Total 2nd Hour Attendance: ${(rep.totalPresent || 0) + (rep.visitorsCount || 0)}`);
+      return lines.join('\n');
+    }
+
+    function copyWardReportText() {
+      const text = buildWardReportPlainText();
+      copyStringToClipboard(text, 'Ward Attendance Summary copied!');
+    }
+
+    function renderReportContacts() {
+      const el = document.getElementById('report-contacts-list');
+      if (!el) return;
+      if (!state.reportContacts || state.reportContacts.length === 0) {
+        el.innerHTML = `<div class="py-4 text-center text-[12px] text-[#666666]">Sign in to view presidency &amp; bishopric contacts.</div>`;
+        return;
+      }
+      const smsReport = encodeURIComponent(buildWardReportPlainText());
+      el.innerHTML = state.reportContacts.map(c => `
+        <div class="py-2 px-1 flex items-center justify-between gap-2">
+          <div class="min-w-0">
+            <div class="text-[10px] font-bold uppercase tracking-wider text-[#555888]">${escapeHtml(c.calling)}</div>
+            <div class="text-[12.5px] font-bold text-[#232323] truncate">${escapeHtml(c.name)}</div>
+          </div>
+          <div class="flex items-center gap-1.5 shrink-0">
+            ${c.phone ? `
+              <a href="sms:${escapeHtml(c.phone)}?body=${smsReport}"
+                 class="bg-[#5c8d97] hover:bg-[#4e7b84] text-white text-[10.5px] font-bold px-3 py-1 rounded-full shadow-sm">
+                Text Report
+              </a>
+            ` : ''}
+            ${c.email ? `
+              <a href="mailto:${escapeHtml(c.email)}?subject=${encodeURIComponent('Valley View 2nd Hour Attendance - ' + state.currentDate)}&body=${smsReport}"
+                 class="bg-[#555888] hover:bg-[#464973] text-white text-[10.5px] font-bold px-3 py-1 rounded-full shadow-sm">
+                Email
+              </a>
+            ` : ''}
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // =========================================================================
+    // BOTTOM NAVIGATION TAB SWITCHER (Toggles Compact vs Full KPI Banner per Figma!)
+    // =========================================================================
+    function switchAdminTab(tab) {
+      state.adminTab = tab;
+      ['rollcall', 'dashboard', 'visitors', 'reports'].forEach(t => {
+        const pane = document.getElementById('tab-' + t);
+        const btn = document.getElementById('nav-btn-' + t);
+        if (pane) pane.classList.toggle('hidden', t !== tab);
+        if (btn) {
+          if (t === tab) {
+            btn.className = 'px-4 py-1.5 rounded-full bg-[#5c8d97] text-white flex items-center gap-1.5 transition shadow';
+          } else {
+            btn.className = 'px-3.5 py-1.5 rounded-full text-white/75 hover:text-white flex items-center gap-1.5 transition';
+          }
+        }
+      });
+
+      // Per Figma UI: Show KPI strip on Insights (dashboard) & Report (reports), hide on Roll Call & Visitors!
+      const kpiStrip = document.getElementById('hero-kpi-strip');
+      if (kpiStrip) {
+        if (tab === 'dashboard' || tab === 'reports') {
+          kpiStrip.classList.remove('hidden');
+          kpiStrip.classList.add('grid');
+        } else {
+          kpiStrip.classList.add('hidden');
+          kpiStrip.classList.remove('grid');
+        }
+      }
+
+      if (tab === 'dashboard') renderDashboardInsights();
+      if (tab === 'visitors') renderVisitorsViews();
+      if (tab === 'reports') {
+        loadWardReport();
+        renderReportContacts();
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // =========================================================================
+    // QR / NFC MODAL & SCAN VIEW PREVIEW
+    // =========================================================================
+    function getPublicCheckInBaseUrl() {
+      if (!isAppsScriptEnv() && location.protocol.startsWith('http') && !location.hostname.includes('googleusercontent.com') && !location.hostname.includes('localhost')) {
+        return location.origin + location.pathname;
+      }
+      if (state.githubPagesUrl) {
+        return state.githubPagesUrl.replace(/\/+$/, '');
+      }
+      return (state.webAppUrl || APPS_SCRIPT_WEB_APP_URL).split('?')[0];
+    }
+
+    function openQRModal() {
+      const sel = document.getElementById('qr-class-select');
+      if (sel) {
+        sel.innerHTML = state.classes.map(c =>
+          `<option value="${escapeHtml(c)}" ${c === state.currentClass ? 'selected' : ''}>${escapeHtml(getClassTitle(c))}</option>`
+        ).join('');
+      }
+      updateQRCode(state.currentClass);
+      document.getElementById('modal-qr').classList.remove('hidden');
+    }
+
+    function closeQRModal() {
+      document.getElementById('modal-qr').classList.add('hidden');
+    }
+
+    function updateQRCode(className) {
+      const base = getPublicCheckInBaseUrl();
+      const sep = base.includes('?') ? '&' : '?';
+      const targetUrl = `${base}${sep}class=${encodeURIComponent(className)}`;
+
+      document.getElementById('qr-modal-title').textContent = `${getClassTitle(className)} Check-In`;
+      document.getElementById('qr-url-input').value = targetUrl;
+      document.getElementById('print-sign-title').textContent = getClassTitle(className);
+      document.getElementById('print-sign-url').textContent = targetUrl;
+
+      const box = document.getElementById('qrcode-canvas');
+      const printBox = document.getElementById('print-qrcode-canvas');
+      if (box) box.innerHTML = '';
+      if (printBox) printBox.innerHTML = '';
+
+      if (typeof QRCode !== 'undefined') {
+        if (box) {
+          new QRCode(box, {
+            text: targetUrl,
+            width: 176,
+            height: 176,
+            colorDark: '#232323',
+            colorLight: '#ffffff',
+            correctLevel: QRCode.CorrectLevel.M
+          });
+        }
+        if (printBox) {
+          new QRCode(printBox, {
+            text: targetUrl,
+            width: 240,
+            height: 240,
+            colorDark: '#232323',
+            colorLight: '#ffffff',
+            correctLevel: QRCode.CorrectLevel.M
+          });
+        }
+      }
+    }
+
+    function copyQRUrl() {
+      const inp = document.getElementById('qr-url-input');
+      if (!inp) return;
+      copyStringToClipboard(inp.value, 'Classroom Check-In link copied!');
+    }
+
+    function previewScanModeFromModal() {
+      const chosenClass = document.getElementById('qr-class-select')?.value || state.currentClass;
+      closeQRModal();
+      state.currentClass = chosenClass;
+      state.isPreviewingScan = true;
+      document.getElementById('admin-app').classList.add('hidden');
+      document.getElementById('scan-app').classList.remove('hidden');
+      document.getElementById('scan-preview-banner').classList.remove('hidden');
+      initScanView(false);
+    }
+
+    function exitScanPreview() {
+      state.isPreviewingScan = false;
+      document.getElementById('scan-app').classList.add('hidden');
+      document.getElementById('scan-preview-banner').classList.add('hidden');
+      document.getElementById('admin-app').classList.remove('hidden');
+      renderClassPills();
+      renderAllAdminViews();
+    }
+
+    // =========================================================================
+    // SELF CHECK-IN MODE (QR / NFC CLASSROOM VIEW — Matches Figma 05)
+    // =========================================================================
+    function initScanView(autoTriggerSavedUser) {
+      const subEl = document.getElementById('scan-class-subtitle');
+      if (subEl) subEl.textContent = `${getClassTitle(state.currentClass)} • Remembered next Sunday`;
+
+      const dateSel = document.getElementById('scan-date-select');
+      if (dateSel) {
+        if (state.dates.length) {
+          dateSel.innerHTML = state.dates.map(d =>
+            `<option value="${escapeHtml(d.key)}" ${d.key === state.currentDate ? 'selected' : ''}>${escapeHtml(d.label)}</option>`
+          ).join('');
+        } else {
+          dateSel.innerHTML = `<option value="">Today</option>`;
+        }
+      }
+
+      renderScanMemberList();
+
+      if (autoTriggerSavedUser && !state.isCheckingInFriend && state.currentDate) {
+        try {
+          const savedRaw = lsGet(STORAGE_KEY_SCAN_USER);
+          if (savedRaw) {
+            const saved = JSON.parse(savedRaw);
+            if (saved && saved.type === 'member' && saved.name) {
+              performMemberSelfCheckIn(saved.name, true);
+              return;
+            } else if (saved && saved.type === 'visitor' && saved.name) {
+              performVisitorSelfCheckIn(saved, true);
+              return;
+            }
+          }
+        } catch (e) {}
+      }
+    }
+
+    function onScanDateChange(newDate) {
+      state.currentDate = newDate;
+      document.getElementById('scan-success-card').classList.add('hidden');
+      document.getElementById('scan-form-container').classList.remove('hidden');
+    }
+
+    function switchScanRole(role) {
+      state.scanRole = role;
+      const mBtn = document.getElementById('scan-tab-member');
+      const vBtn = document.getElementById('scan-tab-visitor');
+      const mPane = document.getElementById('scan-member-pane');
+      const vPane = document.getElementById('scan-visitor-pane');
+      if (role === 'member') {
+        mBtn.className = 'py-2 rounded-full text-[12px] font-bold bg-[#5c8d97] text-white shadow transition';
+        vBtn.className = 'py-2 rounded-full text-[12px] font-bold text-[#bdbdbd] hover:text-white transition';
+        mPane.classList.remove('hidden');
+        vPane.classList.add('hidden');
+      } else {
+        vBtn.className = 'py-2 rounded-full text-[12px] font-bold bg-[#5c7c4c] text-white shadow transition';
+        mBtn.className = 'py-2 rounded-full text-[12px] font-bold text-[#bdbdbd] hover:text-white transition';
+        vPane.classList.remove('hidden');
+        mPane.classList.add('hidden');
+      }
+    }
+
+    function clearScanSearch() {
+      const inp = document.getElementById('scan-member-search');
+      if (inp) inp.value = '';
+      renderScanMemberList();
+    }
+
+    function renderScanMemberList() {
+      const box = document.getElementById('scan-member-results');
+      if (!box) return;
+      const q = (document.getElementById('scan-member-search')?.value || '').trim().toLowerCase();
+      const clr = document.getElementById('scan-search-clear');
+      if (clr) clr.classList.toggle('hidden', !q);
+
+      const pool = state.memberNames.length ? state.memberNames : state.members.map(m => m.name);
+      if (pool.length === 0) {
+        box.innerHTML = `<div class="p-4 text-center text-[12px] text-[#666666]">Loading ward roster from Google Sheets...</div>`;
+        return;
+      }
+
+      const matches = q ? pool.filter(n => n.toLowerCase().includes(q)) : pool.slice(0, 40);
+      if (matches.length === 0) {
+        box.innerHTML = `<div class="p-4 text-center text-[12px] text-[#666666]">No matching member found. Tap <b>I’m a Visitor</b> above!</div>`;
+        return;
+      }
+
+      box.innerHTML = matches.slice(0, 50).map(name => {
+        const safeAttr = escapeHtml(name).replace(/'/g, "\\'");
+        return `
+          <button type="button" onclick="performMemberSelfCheckIn('${safeAttr}', false)"
+            class="w-full px-3.5 py-2.5 text-left hover:bg-[#5c7c4c]/10 active:bg-[#5c7c4c]/20 flex items-center justify-between transition">
+            <span class="text-[13px] font-bold text-[#232323]">${escapeHtml(name)}</span>
+            <span class="bg-[#5c7c4c] text-white text-[10.5px] font-bold px-3 py-1 rounded-full shadow-sm">Check In</span>
+          </button>
+        `;
+      }).join('');
+    }
+
+    function performMemberSelfCheckIn(memberName, isAuto) {
+      if (!state.isCheckingInFriend) {
+        lsSet(STORAGE_KEY_SCAN_USER, JSON.stringify({ type: 'member', name: memberName }));
+      }
+
+      const localMem = state.members.find(m => m.name.toLowerCase() === memberName.toLowerCase());
+      if (localMem) localMem.attended = true;
+
+      const firstName = extractFirstNameClient(memberName);
+      showScanSuccessScreen(
+        `Welcome, ${firstName}!`,
+        `${memberName} • ${getClassTitle(state.currentClass)} (${state.currentDate || 'Today'})`,
+        isAuto ? 'Auto-checked in from your phone' : 'Checked in on Ward Roster'
+      );
+
+      setScanSyncStatus('saving');
+      sendReliable('selfCheckInMember', {
+        className: state.currentClass,
+        dateStr: state.currentDate,
+        memberName: memberName
+      }, setScanSyncStatus);
+    }
+
+    function submitScanVisitor(e) {
+      e.preventDefault();
+      const name = document.getElementById('vis-name').value.trim();
+      const phone = document.getElementById('vis-phone').value.trim();
+      const email = document.getElementById('vis-email').value.trim();
+      const notes = document.getElementById('vis-notes').value.trim();
+      if (!name) return;
+      performVisitorSelfCheckIn({ name, phone, email, notes }, false);
+    }
+
+    function performVisitorSelfCheckIn(vData, isAuto) {
+      if (!state.isCheckingInFriend) {
+        lsSet(STORAGE_KEY_SCAN_USER, JSON.stringify(Object.assign({ type: 'visitor' }, vData)));
+      }
+      const firstName = extractFirstNameClient(vData.name);
+      showScanSuccessScreen(
+        `Welcome, ${firstName}!`,
+        `${vData.name} • ${getClassTitle(state.currentClass)} (${state.currentDate || 'Today'})`,
+        isAuto ? 'Returning Visitor Auto Check-In' : 'Visitor Check-In Complete'
+      );
+
+      setScanSyncStatus('saving');
+      sendReliable('selfCheckInVisitor', {
+        className: state.currentClass,
+        dateStr: state.currentDate,
+        visitorData: vData
+      }, function(kind, res) {
+        setScanSyncStatus(kind);
+        if (kind === 'saved' && res && res.totalVisits) {
+          const badge = document.getElementById('scan-visit-badge');
+          if (badge) {
+            badge.textContent = `Visit #${res.totalVisits} with Valley View Ward`;
+            badge.classList.remove('hidden');
+          }
+        }
+      });
+    }
+
+    function showScanSuccessScreen(headline, detail, badgeText) {
+      state.isCheckingInFriend = false;
+      document.getElementById('friend-mode-banner').classList.add('hidden');
+      const card = document.getElementById('scan-success-card');
+      card.classList.remove('hidden');
+      document.getElementById('scan-success-name').textContent = headline;
+      document.getElementById('scan-success-detail').textContent = detail;
+      const badge = document.getElementById('scan-visit-badge');
+      if (badgeText) {
+        badge.textContent = badgeText;
+        badge.classList.remove('hidden');
+      } else {
+        badge.classList.add('hidden');
+      }
+    }
+
+    function startCheckInFriend() {
+      state.isCheckingInFriend = true;
+      document.getElementById('scan-success-card').classList.add('hidden');
+      document.getElementById('friend-mode-banner').classList.remove('hidden');
+      document.getElementById('scan-form-container').classList.remove('hidden');
+      clearScanSearch();
+    }
+
+    function cancelFriendMode() {
+      state.isCheckingInFriend = false;
+      document.getElementById('friend-mode-banner').classList.add('hidden');
+      document.getElementById('scan-success-card').classList.remove('hidden');
+    }
+
+    function switchDeviceUser() {
+      lsSet(STORAGE_KEY_SCAN_USER, '');
+      state.isCheckingInFriend = false;
+      document.getElementById('friend-mode-banner').classList.add('hidden');
+      document.getElementById('scan-success-card').classList.add('hidden');
+      document.getElementById('scan-form-container').classList.remove('hidden');
+      clearScanSearch();
+      showToast('Cleared saved phone profile');
+    }
+
+    // =========================================================================
+    // SHARED UI UTILITIES
+    // =========================================================================
+    function copyStringToClipboard(str, toastMessage) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(str)
+          .then(() => showToast(toastMessage || 'Copied!'))
+          .catch(() => fallbackCopyText(str, toastMessage));
+      } else {
+        fallbackCopyText(str, toastMessage);
+      }
+    }
+
+    function fallbackCopyText(str, toastMessage) {
+      try {
+        const ta = document.createElement('textarea');
+        ta.value = str;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        showToast(toastMessage || 'Copied!');
+      } catch (e) {
+        showToast('Copy completed');
+      }
+    }
+
+    function onModalBackdropClick(event, modalId) {
+      if (event.target && event.target.id === modalId) {
+        document.getElementById(modalId).classList.add('hidden');
+      }
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('app-toast');
+      const text = document.getElementById('app-toast-text');
+      if (!toast || !text) return;
+      text.textContent = msg;
+      toast.classList.remove('opacity-0', 'pointer-events-none');
+      setTimeout(() => {
+        toast.classList.add('opacity-0', 'pointer-events-none');
+      }, 2600);
+    }
+
+    window.onload = initApp;
+  </script>
+</body>
+</html>
