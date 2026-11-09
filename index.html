@@ -26,6 +26,11 @@
 
   <style>
     * { -webkit-tap-highlight-color: transparent; box-sizing: border-box; }
+    /* iPhone safe areas (Dynamic Island / status bar / home bar). No effect on Android or desktop (inset = 0). */
+    .fixed.inset-0 {
+      padding-top: max(16px, env(safe-area-inset-top, 0px));
+      padding-bottom: max(16px, env(safe-area-inset-bottom, 0px));
+    }
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       background-color: #181818;
@@ -82,10 +87,11 @@
 <body class="min-h-screen flex justify-center bg-[#181818] select-none">
 
   <!-- MOBILE APP SHELL (Centered 430px mobile frame on desktop, full width on mobile) -->
-  <div id="mobile-shell" class="w-full max-w-[430px] min-h-screen bg-[#232323] relative flex flex-col pb-28 shadow-2xl border-x border-[#2e2e2e]">
+  <div id="mobile-shell" style="padding-bottom: calc(7rem + env(safe-area-inset-bottom, 0px));" class="w-full max-w-[430px] min-h-screen bg-[#232323] relative flex flex-col pb-28 shadow-2xl border-x border-[#2e2e2e]">
 
     <!-- ==================== OVERLAY HEADER (Updated Wordmark from Figma) ==================== -->
-    <header class="sticky top-0 z-30 bg-[#2a2a2a]/95 backdrop-blur-md px-4 py-3 flex items-center justify-between shadow-[0_4px_14px_rgba(0,0,0,0.45)]">
+    <header class="sticky top-0 z-30 bg-[#2a2a2a]/95 backdrop-blur-md px-4 py-3 flex items-center justify-between shadow-[0_4px_14px_rgba(0,0,0,0.45)]"
+            style="padding-top: calc(env(safe-area-inset-top, 0px) + 12px);">
       <button type="button" onclick="onHeaderLogoClick()" class="flex flex-col items-start text-left focus:outline-none group">
         <div class="flex items-center gap-1.5">
           <img id="header-check-logo" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODUwIiBoZWlnaHQ9Ijg1MCIgdmlld0JveD0iMCAwIDg1MCA4NTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik02MzcuNSAwSDIxMi41Qzk1LjEzOTUgMCAwIDk1LjEzOTUgMCAyMTIuNVY2MzcuNUMwIDc1NC44NjEgOTUuMTM5NSA4NTAgMjEyLjUgODUwSDYzNy41Qzc1NC44NjEgODUwIDg1MCA3NTQuODYxIDg1MCA2MzcuNVYyMTIuNUM4NTAgOTUuMTM5NSA3NTQuODYxIDAgNjM3LjUgMFoiIGZpbGw9IiM1NTU4ODgiLz4KPHBhdGggZD0iTTE5NSA0NDIuODY3TDMxOC45MjYgNTY3TDM5MC4xMzIgNDg0LjcwMk0zOTAuMTMyIDQ4NC43MDJMNTQ5LjA3NCAzMDFNMzkwLjEzMiA0ODQuNzAyTDM1NC4zMzMgNDQyLjg2N00zOTAuMTMyIDQ4NC43MDJMNDYwLjU1NiA1NjdMNjczIDMwMSIgc3Ryb2tlLXdpZHRoPSI0NSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2U9IiNGNUY1RjUiLz4KPC9zdmc+Cg==" alt="2nd Hour Logo" class="w-[24px] h-[24px] object-contain shrink-0 transition-transform group-active:scale-95">
@@ -526,7 +532,7 @@
       </main>
 
       <!-- FLOATING UNSAVED CHANGES BAR (Above Bottom Nav Dock) -->
-      <div id="unsaved-bar" class="hidden fixed bottom-16 left-1/2 -translate-x-1/2 w-[calc(100%-24px)] max-w-[406px] z-40">
+      <div id="unsaved-bar" style="bottom: calc(env(safe-area-inset-bottom, 0px) + 64px);" class="hidden fixed bottom-16 left-1/2 -translate-x-1/2 w-[calc(100%-24px)] max-w-[406px] z-40">
         <div class="bg-[#555888] border border-white/20 text-white rounded-full px-4 py-2.5 shadow-[0_10px_28px_rgba(0,0,0,0.65)] flex items-center justify-between gap-2">
           <div class="flex items-center gap-2 min-w-0">
             <span class="w-2.5 h-2.5 rounded-full bg-[#f3dfb2] animate-pulse shrink-0"></span>
@@ -546,7 +552,7 @@
       </div>
 
       <!-- ==================== OVERLAY FOOTER NAVIGATION (With Icons!) ==================== -->
-      <nav id="admin-bottom-nav" aria-label="Bottom Navigation"
+      <nav id="admin-bottom-nav" aria-label="Bottom Navigation" style="padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 8px);"
            class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] z-30 bg-[#2a2a2a]/95 backdrop-blur-md border-t border-[#383838] px-3 py-2 flex items-center justify-around shadow-[0_-4px_16px_rgba(0,0,0,0.45)]">
         <!-- Roll Call Tab -->
         <button type="button" onclick="switchAdminTab('rollcall')" id="nav-btn-rollcall" aria-label="Roll Call"
@@ -802,7 +808,7 @@
   </div>
 
   <!-- TOAST NOTIFICATION -->
-  <div id="app-toast" class="fixed top-16 left-1/2 -translate-x-1/2 z-50 bg-[#141414] border border-[#444444] text-white text-[12px] font-semibold px-4 py-2.5 rounded-full shadow-xl transition-all duration-300 opacity-0 pointer-events-none flex items-center gap-2">
+  <div id="app-toast" style="top: calc(env(safe-area-inset-top, 0px) + 64px);" class="fixed top-16 left-1/2 -translate-x-1/2 z-50 bg-[#141414] border border-[#444444] text-white text-[12px] font-semibold px-4 py-2.5 rounded-full shadow-xl transition-all duration-300 opacity-0 pointer-events-none flex items-center gap-2">
     <span class="w-2 h-2 rounded-full bg-[#638452]"></span>
     <span id="app-toast-text">Saved</span>
   </div>
