@@ -144,7 +144,7 @@
       </div>
 
       <!-- Auto / Instant Check-In Success Card (#5c7c4c Sage Green — Matches Figma 05) -->
-      <section id="scan-success-card" class="hidden bg-[#5c7c4c] rounded-[16px] p-5 text-center shadow-[0_8px_20px_rgba(0,0,0,0.4)] animate-pop">
+      <section id="scan-success-card" role="status" aria-live="polite" tabindex="-1" class="hidden outline-none bg-[#5c7c4c] rounded-[16px] p-5 text-center shadow-[0_8px_20px_rgba(0,0,0,0.4)] animate-pop">
         <div class="w-14 h-14 rounded-full bg-[#2e3d26] text-white flex items-center justify-center mx-auto mb-3 shadow-md">
           <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2.8" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
@@ -788,6 +788,58 @@
   </div>
 
   <!-- ===================================================================== -->
+  <!-- MODAL: ADD VISITOR TO MEMBERS (leader edits details before saving)    -->
+  <!-- ===================================================================== -->
+  <div id="modal-promote-member" class="hidden fixed inset-0 z-50 bg-black/75 backdrop-blur-sm flex items-center justify-center p-4" onclick="onModalBackdropClick(event, 'modal-promote-member')">
+    <div class="w-full max-w-[345px] bg-[#555888] rounded-[16px] p-5 shadow-2xl text-white relative max-h-[92vh] overflow-y-auto">
+      <div class="flex items-center justify-between mb-3">
+        <div>
+          <h3 class="text-[15px] font-bold text-white">Add to Members</h3>
+          <p id="promote-subtitle" class="text-[11px] text-[#e0e2f5]">Review before saving</p>
+        </div>
+        <button type="button" onclick="closePromoteModal()" aria-label="Close Add to Members" class="text-white/80 hover:text-white p-1">
+          <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+        </button>
+      </div>
+
+      <form onsubmit="submitPromoteMember(event)" class="space-y-2.5 text-left">
+        <div>
+          <label for="promote-name" class="block text-[10.5px] font-bold text-[#e0e2f5] mb-1 ml-1">Name in Member Info (Last, First)</label>
+          <input id="promote-name" type="text" required autocomplete="off" placeholder="Last, First *"
+            class="w-full bg-[#f5f5f5] text-[#232323] placeholder-[#757575] text-[12.5px] font-semibold rounded-[10px] px-3 py-2.5 focus:outline-none">
+        </div>
+        <div>
+          <span class="block text-[10.5px] font-bold text-[#e0e2f5] mb-1 ml-1">Gender *</span>
+          <div class="grid grid-cols-2 gap-2" role="radiogroup" aria-label="Gender">
+            <button type="button" id="promote-g-M" role="radio" aria-checked="false" onclick="setPromoteGender('M')"
+              class="py-2.5 rounded-[10px] text-[12.5px] font-bold bg-white/15 text-white transition">Male</button>
+            <button type="button" id="promote-g-F" role="radio" aria-checked="false" onclick="setPromoteGender('F')"
+              class="py-2.5 rounded-[10px] text-[12.5px] font-bold bg-white/15 text-white transition">Female</button>
+          </div>
+        </div>
+        <div>
+          <label for="promote-phone" class="block text-[10.5px] font-bold text-[#e0e2f5] mb-1 ml-1">Phone</label>
+          <input id="promote-phone" type="tel" placeholder="Phone Number"
+            class="w-full bg-[#f5f5f5] text-[#232323] placeholder-[#757575] text-[12.5px] font-semibold rounded-[10px] px-3 py-2.5 focus:outline-none">
+        </div>
+        <div>
+          <label for="promote-email" class="block text-[10.5px] font-bold text-[#e0e2f5] mb-1 ml-1">Email</label>
+          <input id="promote-email" type="email" placeholder="Email"
+            class="w-full bg-[#f5f5f5] text-[#232323] placeholder-[#757575] text-[12.5px] font-semibold rounded-[10px] px-3 py-2.5 focus:outline-none">
+        </div>
+        <p class="text-[10.5px] text-[#e0e2f5] leading-snug px-1">They will be added to the Member Info sheet and this class roster. Their phone will check them in as a member from now on.</p>
+        <div id="promote-error" class="hidden text-[11.5px] font-semibold text-[#ffd9d7] px-1"></div>
+        <div class="flex items-center justify-end gap-2 pt-1">
+          <button type="button" onclick="closePromoteModal()"
+            class="bg-white/20 hover:bg-white/30 text-white text-[12px] font-semibold px-4 py-2 rounded-full transition">Cancel</button>
+          <button type="submit" id="promote-submit"
+            class="bg-[#2f3158] hover:bg-[#262848] active:scale-95 text-white text-[12px] font-bold px-5 py-2 rounded-full shadow transition">Add to Members</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
   <!-- MODAL 3: BATCH CONFIRMATION MODAL (Replaces native confirm())         -->
   <!-- ===================================================================== -->
   <div id="modal-batch-confirm" class="hidden fixed inset-0 z-50 bg-black/75 backdrop-blur-sm flex items-center justify-center p-4" onclick="onModalBackdropClick(event, 'modal-batch-confirm')">
@@ -835,6 +887,17 @@
     let auth = { token: '', email: '', name: '', calling: '' };
     let authPendingEmail = '';
     let lastBootAt = 0;
+    let rosterReqSeq = 0;      // newest roster request wins; older replies can never overwrite what is on screen
+    let reportReqSeq = 0;
+
+    // A cached roster is only trusted for the class AND date it was loaded for.
+    function rosterFor(cls, date) {
+      const r = state.rostersByClass && state.rostersByClass[cls];
+      return (r && Array.isArray(r.members) && r.dateStr === (date || state.currentDate)) ? r : null;
+    }
+    function cloneMembers(list) {
+      return (list || []).map(function(m) { return Object.assign({}, m); });
+    }
     let deferredInstallPrompt = null;
 
     let state = {
@@ -854,6 +917,7 @@
       reportContacts: [],
       visitorsData: { dateVisitors: [], frequentVisitors: [], allRecent: [] },
       wardReport: null,
+      rosterLoading: false,
       webAppUrl: APPS_SCRIPT_WEB_APP_URL,
       scanKey: '',
       isScanMode: false,
@@ -1427,6 +1491,8 @@
           persistBootCache();
           setSyncBadge('live', extractFirstNameClient(auth.name) || 'Leader');
           if (forceToast) showToast('Synced with Google Sheet!');
+          // The boot reply covers one class/date. If the screen is showing something else, load exactly that.
+          if (!rosterFor(state.currentClass)) fetchClassRoster();
         })
         .catch(function(err) {
           if (!auth.token) return;
@@ -1446,21 +1512,25 @@
       if (Array.isArray(boot.memberNames)) state.memberNames = boot.memberNames;
       if (boot.memberInfoMap) state.memberInfoMap = boot.memberInfoMap;
       if (Array.isArray(boot.reportContacts)) state.reportContacts = boot.reportContacts;
-      if (boot.visitorsData) state.visitorsData = boot.visitorsData;
+      // A boot reply describes ONE class on ONE date (the server's default). Only use it where it matches the screen.
+      const bootDate = (boot.initialRoster && boot.initialRoster.dateStr) || boot.defaultDate || '';
+      if (boot.visitorsData && (!bootDate || bootDate === state.currentDate)) state.visitorsData = boot.visitorsData;
       if (boot.webAppUrl) state.webAppUrl = boot.webAppUrl;
       if (boot.scanKey) {
         state.scanKey = boot.scanKey;
         lsSet(STORAGE_KEY_SCAN_KEY, boot.scanKey);
       }
-      if (boot.rostersByClass) state.rostersByClass = boot.rostersByClass;
-
-      if (boot.initialRoster && Array.isArray(boot.initialRoster.members)) {
-        const cls = boot.initialRoster.className || state.currentClass;
-        state.rostersByClass[cls] = boot.initialRoster;
+      if (boot.rostersByClass) {   // copy saved on this phone: only fills gaps, never overwrites newer data
+        Object.keys(boot.rostersByClass).forEach(function(c) {
+          if (!state.rostersByClass[c]) state.rostersByClass[c] = boot.rostersByClass[c];
+        });
       }
-
-      const activeRoster = state.rostersByClass[state.currentClass] || boot.initialRoster || { members: [] };
-      state.members = (activeRoster.members || []).map(m => Object.assign({}, m));
+      const ir = boot.initialRoster;
+      if (ir && Array.isArray(ir.members) && ir.className && ir.dateStr === state.currentDate) {
+        state.rostersByClass[ir.className] = ir;
+      }
+      const activeRoster = rosterFor(state.currentClass);
+      if (activeRoster) state.members = cloneMembers(activeRoster.members);
 
       if (!state.isScanMode) {
         renderDateDropdown();
@@ -1609,29 +1679,53 @@
         showAuthGate();
         return;
       }
-      if (state.rostersByClass && state.rostersByClass[state.currentClass] && state.rostersByClass[state.currentClass].dateStr === state.currentDate) {
-        state.members = (state.rostersByClass[state.currentClass].members || []).map(m => Object.assign({}, m));
-        renderAllAdminViews();
+      // Remember exactly what was asked for. Every reply is judged against this, never against "whatever is selected now".
+      const cls = state.currentClass;
+      const date = state.currentDate;
+      const seq = ++rosterReqSeq;
+
+      const cached = rosterFor(cls, date);
+      if (cached) {
+        state.members = cloneMembers(cached.members);
+        state.rosterLoading = false;
+      } else {
+        state.members = [];            // never show another class's people under this class's name
+        state.rosterLoading = true;
       }
+      renderAllAdminViews();
 
       setSyncBadge('loading', 'Loading...');
-      api('getAttendanceData', { className: state.currentClass, dateStr: state.currentDate })
+      api('getAttendanceData', { className: cls, dateStr: date })
         .then(res => {
           if (res && res.ok && Array.isArray(res.members)) {
-            state.members = res.members;
-            state.rostersByClass[state.currentClass] = res;
+            res.className = cls;
+            res.dateStr = date;
+            // Still on the same date? Then this class's numbers are valid no matter which class is showing now.
+            if (date === state.currentDate) state.rostersByClass[cls] = res;
             persistBootCache();
+            if (seq === rosterReqSeq && cls === state.currentClass && date === state.currentDate) {
+              state.members = cloneMembers(res.members);
+              state.rosterLoading = false;
+              setSyncBadge('live', extractFirstNameClient(auth.name) || 'Leader');
+            }
             renderAllAdminViews();
-            setSyncBadge('live', extractFirstNameClient(auth.name) || 'Leader');
+          } else if (seq === rosterReqSeq) {
+            state.rosterLoading = false;
+            setSyncBadge('offline', extractFirstNameClient(auth.name) || 'Offline');
+            showToast((res && res.message) || 'Could not load this class. Tap your name > Sync to retry.');
+            renderAllAdminViews();
           }
         })
         .catch(() => {
+          if (seq !== rosterReqSeq) return;
+          state.rosterLoading = false;
           setSyncBadge('offline', extractFirstNameClient(auth.name) || 'Offline');
           renderAllAdminViews();
         });
 
-      api('getVisitorsData', { dateStr: state.currentDate })
+      api('getVisitorsData', { dateStr: date })
         .then(vRes => {
+          if (date !== state.currentDate) return;      // user already moved to another date
           if (vRes && vRes.ok && Array.isArray(vRes.dateVisitors)) {
             state.visitorsData = vRes;
             persistBootCache();
@@ -1712,6 +1806,13 @@
 
       if (!auth.token && state.members.length === 0) {
         container.innerHTML = `<div class="py-8 text-center text-[12.5px] text-[#666666] font-medium">Sign in with your Report Contacts email to load the class roster.</div>`;
+        return;
+      }
+
+      if (state.rosterLoading && state.members.length === 0) {
+        container.innerHTML = `<div class="py-8 text-center text-[12.5px] text-[#666666] font-medium">Loading ${escapeHtml(getClassTitle(state.currentClass))} roster...</div>`;
+        const sub0 = document.getElementById('rollcall-subtitle');
+        if (sub0) sub0.textContent = 'Loading...';
         return;
       }
 
@@ -1893,11 +1994,17 @@
         btn.textContent = 'Saving...';
       }
 
+      const saveCls = state.currentClass;
+      const saveDate = state.currentDate;
       const payloadChanges = Object.assign({}, state.changes);
       state.members.forEach(m => {
         if (Object.prototype.hasOwnProperty.call(payloadChanges, m.name)) {
           m.attended = !!payloadChanges[m.name];
         }
+      });
+      // Keep the per-class saved copy in step, so the report and class switching see the new numbers immediately.
+      state.rostersByClass[saveCls] = Object.assign({}, state.rostersByClass[saveCls] || {}, {
+        className: saveCls, dateStr: saveDate, members: cloneMembers(state.members)
       });
       state.changes = {};
       updateUnsavedBar();
@@ -1905,15 +2012,15 @@
       renderRosterList();
 
       api('saveAttendanceData', {
-        className: state.currentClass,
-        dateStr: state.currentDate,
+        className: saveCls,
+        dateStr: saveDate,
         changes: payloadChanges
       })
         .then(res => {
           if (!res || !res.ok) throw new Error((res && res.message) || 'Save failed');
           persistBootCache();
           setSyncBadge('live', extractFirstNameClient(auth.name) || 'Leader');
-          showToast(`Saved ${getClassTitle(state.currentClass)} attendance!`);
+          showToast(`Saved ${getClassTitle(saveCls)} attendance!`);
         })
         .catch(err => {
           showToast((err && err.message) || 'Could not save to Google Sheet.');
@@ -2008,10 +2115,10 @@
         if (todayList.length === 0) {
           todayEl.innerHTML = `<div class="py-5 text-center text-[12px] text-[#666666]">No visitors logged for ${escapeHtml(state.currentDate || 'this Sunday')} yet.</div>`;
         } else {
-          todayEl.innerHTML = todayList.map(v => {
+          todayEl.innerHTML = todayList.map((v, i) => {
             const cTheme = CLASS_THEMES[v.className] || CLASS_THEMES['Sunday School'];
             return `
-            <div class="py-2 flex items-center justify-between gap-2">
+            <div class="py-2.5">
               <div class="min-w-0">
                 <div class="flex items-center gap-1.5">
                   <span class="text-[13px] font-bold text-[#232323] truncate">${escapeHtml(v.name)}</span>
@@ -2021,7 +2128,10 @@
                   Visit #${v.totalVisits || 1} ${v.phone ? '• ' + escapeHtml(v.phone) : ''} ${v.notes ? '• ' + escapeHtml(v.notes) : ''}
                 </div>
               </div>
-              ${v.phone ? `<a href="sms:${escapeHtml(v.phone)}" class="bg-[#5c8d97] text-white text-[10.5px] font-bold px-3 py-1 rounded-full shrink-0">Text</a>` : ''}
+              <div class="flex flex-wrap items-center gap-1.5 mt-1.5">
+                ${v.phone ? `<a href="sms:${escapeHtml(v.phone)}" class="bg-[#5c8d97] text-white text-[10.5px] font-bold px-3 py-1 rounded-full">Text</a>` : ''}
+                ${promoteControlHtml('today', i, v)}
+              </div>
             </div>
           `}).join('');
         }
@@ -2032,8 +2142,8 @@
         if (freqList.length === 0) {
           freqEl.innerHTML = `<div class="py-5 text-center text-[12px] text-[#666666]">Visitors who attend 2+ Sundays will appear here automatically.</div>`;
         } else {
-          freqEl.innerHTML = freqList.map(v => `
-            <div class="py-2 flex items-center justify-between gap-2">
+          freqEl.innerHTML = freqList.map((v, i) => `
+            <div class="py-2.5">
               <div class="min-w-0">
                 <div class="flex items-center gap-1.5">
                   <span class="text-[13px] font-bold text-[#232323] truncate">${escapeHtml(v.name)}</span>
@@ -2041,11 +2151,146 @@
                 </div>
                 <div class="text-[10.5px] text-[#666666]">Last: ${escapeHtml(v.lastDate || '')} • ${escapeHtml(v.classes || '')}</div>
               </div>
-              ${v.phone ? `<a href="sms:${escapeHtml(v.phone)}" class="bg-[#5c7c4c] text-white text-[10.5px] font-bold px-3 py-1 rounded-full shrink-0">Welcome Text</a>` : ''}
+              <div class="flex flex-wrap items-center gap-1.5 mt-1.5">
+                ${v.phone ? `<a href="sms:${escapeHtml(v.phone)}" class="bg-[#5c7c4c] text-white text-[10.5px] font-bold px-3 py-1 rounded-full">Welcome Text</a>` : ''}
+                ${promoteControlHtml('freq', i, v)}
+              </div>
             </div>
           `).join('');
         }
       }
+    }
+
+    // =========================================================================
+    // ADD VISITOR TO MEMBERS
+    // =========================================================================
+    let promoteCtx = null;
+    let promoteGender = '';
+
+    function formatMemberNameClient(raw) {
+      const s = String(raw || '').trim().replace(/\s+/g, ' ');
+      if (!s || s.indexOf(',') > -1) return s;
+      const p = s.split(' ');
+      if (p.length < 2) return s;
+      const last = p.pop();
+      return last + ', ' + p.join(' ');
+    }
+
+    function visitorIsMember(v) {
+      if (!v) return false;
+      if (v.isMember) return true;
+      const names = (state.memberNames || []).map(function(n) { return String(n).toLowerCase(); });
+      const a = String(v.name || '').trim().toLowerCase().replace(/\s+/g, ' ');
+      return names.indexOf(a) > -1 || names.indexOf(formatMemberNameClient(a)) > -1;
+    }
+
+    function promoteControlHtml(listKey, idx, v) {
+      if (visitorIsMember(v)) {
+        return '<span class="bg-[#5c7c4c]/15 text-[#46663a] text-[10.5px] font-bold px-2.5 py-1 rounded-full whitespace-nowrap">&#10003; Member</span>';
+      }
+      return '<button type="button" onclick="openPromoteModal(\'' + listKey + '\',' + idx + ')" class="bg-[#555888] text-white text-[10.5px] font-bold px-3 py-1 rounded-full whitespace-nowrap active:scale-95 transition">Add to Members</button>';
+    }
+
+    function setPromoteGender(g) {
+      promoteGender = g;
+      ['M', 'F'].forEach(function(x) {
+        const b = document.getElementById('promote-g-' + x);
+        if (!b) return;
+        const on = x === g;
+        b.setAttribute('aria-checked', on ? 'true' : 'false');
+        b.className = 'py-2.5 rounded-[10px] text-[12.5px] font-bold transition ' + (on ? 'bg-white text-[#555888] shadow' : 'bg-white/15 text-white');
+      });
+      const err = document.getElementById('promote-error'); if (err) err.classList.add('hidden');
+    }
+
+    function openPromoteModal(listKey, idx) {
+      if (!auth.token) { showAuthGate(); return; }
+      const vd = state.visitorsData || {};
+      const v = ((listKey === 'freq' ? vd.frequentVisitors : vd.dateVisitors) || [])[idx];
+      if (!v) return;
+      const cls = v.className || String(v.classes || '').split(',')[0].trim() || state.currentClass;
+      promoteCtx = { visitorName: v.name, className: cls };
+      document.getElementById('promote-name').value = formatMemberNameClient(v.name);
+      document.getElementById('promote-phone').value = v.phone || '';
+      document.getElementById('promote-email').value = v.email || '';
+      document.getElementById('promote-subtitle').textContent = 'Visitor: ' + v.name + ' • ' + getClassTitle(cls);
+      document.getElementById('promote-error').classList.add('hidden');
+      const btn = document.getElementById('promote-submit');
+      btn.disabled = false; btn.textContent = 'Add to Members';
+      setPromoteGender('');
+      document.getElementById('modal-promote-member').classList.remove('hidden');
+    }
+
+    function closePromoteModal() {
+      document.getElementById('modal-promote-member').classList.add('hidden');
+      promoteCtx = null;
+    }
+
+    function submitPromoteMember(e) {
+      e.preventDefault();
+      if (!promoteCtx) return;
+      const errEl = document.getElementById('promote-error');
+      const name = formatMemberNameClient(document.getElementById('promote-name').value);
+      if (!name) return;
+      if (promoteGender !== 'M' && promoteGender !== 'F') {
+        errEl.textContent = 'Please choose Male or Female.';
+        errEl.classList.remove('hidden');
+        return;
+      }
+      const btn = document.getElementById('promote-submit');
+      if (btn.disabled) return;                   // one tap = one member
+      btn.disabled = true;
+      btn.textContent = 'Adding...';
+      errEl.classList.add('hidden');
+
+      const ctx = promoteCtx;
+      const payload = {
+        name: name,
+        visitorName: ctx.visitorName,
+        className: ctx.className,
+        gender: promoteGender,
+        phone: document.getElementById('promote-phone').value.trim(),
+        email: document.getElementById('promote-email').value.trim()
+      };
+
+      apiRetry('addVisitorAsMember', payload, { tries: 3 })
+        .then(function(res) {
+          if (!res || res.ok === false) {
+            errEl.textContent = (res && res.message) || 'Could not add this member.';
+            errEl.classList.remove('hidden');
+            btn.disabled = false; btn.textContent = 'Add to Members';
+            return;
+          }
+          applyPromotedMember(ctx, res);
+          closePromoteModal();
+          showToast(res.alreadyMember
+            ? (res.memberName + ' was already a member — linked.')
+            : ('Added ' + res.memberName + ' to members'));
+        })
+        .catch(function() {
+          errEl.textContent = 'Could not reach the Sheet. Check your connection and tap Add to Members again.';
+          errEl.classList.remove('hidden');
+          btn.disabled = false; btn.textContent = 'Add to Members';
+        });
+    }
+
+    function applyPromotedMember(ctx, res) {
+      const official = res.memberName;
+      if (state.memberNames.indexOf(official) === -1) {
+        state.memberNames = state.memberNames.concat([official]).sort();
+      }
+      state.memberInfoMap = state.memberInfoMap || {};
+      state.memberInfoMap[official] = { gender: res.gender || '', phone: res.phone || '', email: res.email || '' };
+      const typed = String(ctx.visitorName || '').trim().toLowerCase();
+      const vd = state.visitorsData || {};
+      ['dateVisitors', 'frequentVisitors', 'allRecent'].forEach(function(k) {
+        (vd[k] || []).forEach(function(v) {
+          if (String(v.name || '').trim().toLowerCase() === typed) { v.isMember = true; v.memberName = official; }
+        });
+      });
+      persistBootCache();
+      renderVisitorsViews();
+      if (res.rosterAdded && ctx.className === state.currentClass) fetchClassRoster();
     }
 
     function openAddVisitorModal() {
@@ -2102,15 +2347,25 @@
     // TAB 4: WEEKLY WARD REPORT & PRESIDENCY CONTACTS
     // =========================================================================
     function computeLocalWardReport() {
+      // Best available numbers for THIS date: current screen > saved roster for this date > last server report > "loading".
+      const base = (state.wardReport && state.wardReport.dateStr === state.currentDate) ? state.wardReport : null;
       let totalPresent = 0;
       const summary = state.classes.map(c => {
-        const r = (c === state.currentClass)
-          ? { members: state.members }
-          : (state.rostersByClass[c] || { members: [] });
-        const mems = r.members || [];
+        const fromServer = base && (base.summary || []).find(x => x.className === c);
+        let mems = null, effective = false;
+        if (c === state.currentClass && (state.members.length || !fromServer)) {
+          mems = state.members; effective = true;
+        } else {
+          const r = rosterFor(c);
+          if (r) mems = r.members;
+        }
+        if (!mems) {
+          if (fromServer) { totalPresent += fromServer.present || 0; return fromServer; }
+          return { className: c, present: 0, total: 0, rate: 0, pending: true };
+        }
         let p = 0;
         mems.forEach(m => {
-          const here = (c === state.currentClass) ? getEffectiveAttended(m) : !!m.attended;
+          const here = effective ? getEffectiveAttended(m) : !!m.attended;
           if (here) p++;
         });
         totalPresent += p;
@@ -2118,7 +2373,8 @@
           className: c,
           present: p,
           total: mems.length,
-          rate: mems.length ? p / mems.length : 0
+          rate: mems.length ? p / mems.length : 0,
+          pending: !!(state.rosterLoading && c === state.currentClass && !mems.length)
         };
       });
       const vToday = (state.visitorsData && state.visitorsData.dateVisitors) ? state.visitorsData.dateVisitors.length : 0;
@@ -2131,15 +2387,17 @@
     }
 
     function loadWardReport() {
-      state.wardReport = computeLocalWardReport();
-      renderWardReportCards(state.wardReport);
-      if (!auth.token || !state.currentDate) return;
+      const date = state.currentDate;
+      const seq = ++reportReqSeq;
+      renderWardReportCards(computeLocalWardReport());
+      if (!auth.token || !date) return;
 
-      api('getWeeklyWardReport', { dateStr: state.currentDate })
+      api('getWeeklyWardReport', { dateStr: date })
         .then(rep => {
+          if (seq !== reportReqSeq || date !== state.currentDate) return;   // stale reply for an old date: ignore
           if (rep && rep.ok && Array.isArray(rep.summary)) {
             state.wardReport = rep;
-            renderWardReportCards(rep);
+            renderWardReportCards(computeLocalWardReport());   // server numbers, with this screen's unsaved edits layered on
           }
         })
         .catch(() => {});
@@ -2155,8 +2413,8 @@
           <div class="py-2 flex items-center justify-between text-[12.5px]">
             <span class="font-bold text-[#232323]">${escapeHtml(getClassTitle(s.className))}</span>
             <div class="flex items-center gap-2">
-              <span class="font-extrabold text-[#232323]">${s.present} / ${s.total}</span>
-              <span class="bg-[#555888]/15 text-[#3e416e] text-[10.5px] font-bold px-2 py-0.5 rounded-full min-w-[44px] text-center">${pct}%</span>
+              <span class="font-extrabold text-[#232323]">${s.pending ? '&mdash;' : (s.present + ' / ' + s.total)}</span>
+              <span class="bg-[#555888]/15 text-[#3e416e] text-[10.5px] font-bold px-2 py-0.5 rounded-full min-w-[44px] text-center">${s.pending ? '...' : (pct + '%')}</span>
             </div>
           </div>
         `;
@@ -2391,6 +2649,7 @@
       state.currentDate = newDate;
       document.getElementById('scan-success-card').classList.add('hidden');
       document.getElementById('scan-form-container').classList.remove('hidden');
+      resetVisitorForm();
     }
 
     function switchScanRole(role) {
@@ -2458,11 +2717,13 @@
       if (localMem) localMem.attended = true;
 
       const firstName = extractFirstNameClient(memberName);
+      const alreadySent = isRecentDuplicateCheckIn('member', memberName);
       showScanSuccessScreen(
         `Welcome, ${firstName}!`,
         `${memberName} • ${getClassTitle(state.currentClass)} (${state.currentDate || 'Today'})`,
         isAuto ? 'Auto-checked in from your phone' : 'Checked in on Ward Roster'
       );
+      if (alreadySent) return;      // same person tapped again moments ago: just show the confirmation, send nothing twice
 
       setScanSyncStatus('saving');
       sendReliable('selfCheckInMember', {
@@ -2479,19 +2740,36 @@
       const email = document.getElementById('vis-email').value.trim();
       const notes = document.getElementById('vis-notes').value.trim();
       if (!name) return;
+      const btn = document.getElementById('vis-submit-btn');
+      if (btn) {
+        if (btn.disabled) return;           // second tap while the first is still going through
+        btn.disabled = true;
+        btn.textContent = 'Checking you in...';
+        btn.classList.add('opacity-60');
+      }
       performVisitorSelfCheckIn({ name, phone, email, notes }, false);
+      resetVisitorFormFieldsOnly();
+    }
+
+    function resetVisitorFormFieldsOnly() {
+      ['vis-name', 'vis-phone', 'vis-email', 'vis-notes'].forEach(function(id) {
+        const el = document.getElementById(id); if (el) el.value = '';
+      });
     }
 
     function performVisitorSelfCheckIn(vData, isAuto) {
-      if (!state.isCheckingInFriend) {
+      const rememberOnThisPhone = !state.isCheckingInFriend;
+      if (rememberOnThisPhone) {
         lsSet(STORAGE_KEY_SCAN_USER, JSON.stringify(Object.assign({ type: 'visitor' }, vData)));
       }
       const firstName = extractFirstNameClient(vData.name);
+      const alreadySent = isRecentDuplicateCheckIn('visitor', vData.name);
       showScanSuccessScreen(
         `Welcome, ${firstName}!`,
         `${vData.name} • ${getClassTitle(state.currentClass)} (${state.currentDate || 'Today'})`,
         isAuto ? 'Returning Visitor Auto Check-In' : 'Visitor Check-In Complete'
       );
+      if (alreadySent) return;      // same person tapped again moments ago: just show the confirmation, send nothing twice
 
       setScanSyncStatus('saving');
       sendReliable('selfCheckInVisitor', {
@@ -2500,6 +2778,17 @@
         visitorData: vData
       }, function(kind, res) {
         setScanSyncStatus(kind);
+        if (kind === 'saved' && res && res.promotedToMember && res.memberName) {
+          // A leader has added this person as a member: from now on this phone checks in as a member.
+          if (rememberOnThisPhone) lsSet(STORAGE_KEY_SCAN_USER, JSON.stringify({ type: 'member', name: res.memberName }));
+          const nm = document.getElementById('scan-success-name');
+          const dt = document.getElementById('scan-success-detail');
+          const bd = document.getElementById('scan-visit-badge');
+          if (nm) nm.textContent = 'Welcome back, ' + extractFirstNameClient(res.memberName) + '!';
+          if (dt) dt.textContent = res.memberName + ' • ' + getClassTitle(state.currentClass) + ' (' + (state.currentDate || 'Today') + ')';
+          if (bd) { bd.textContent = 'Checked in as a member'; bd.classList.remove('hidden'); }
+          return;
+        }
         if (kind === 'saved' && res && res.totalVisits) {
           const badge = document.getElementById('scan-visit-badge');
           if (badge) {
@@ -2510,11 +2799,48 @@
       });
     }
 
+    // ---- Repeat-submit protection for the public check-in page ----
+    const recentCheckIns = {};
+    function isRecentDuplicateCheckIn(kind, name) {
+      const key = kind + '|' + String(name || '').trim().toLowerCase() + '|' + state.currentClass + '|' + state.currentDate;
+      const now = Date.now();
+      if (recentCheckIns[key] && now - recentCheckIns[key] < 15000) return true;
+      recentCheckIns[key] = now;
+      return false;
+    }
+
+    function scrollToScanConfirmation() {
+      const card = document.getElementById('scan-success-card');
+      if (!card) return;
+      const go = function() {
+        const hdr = document.querySelector('header');
+        const offset = (hdr ? hdr.offsetHeight : 0) + 8;
+        const top = card.getBoundingClientRect().top + (window.pageYOffset || 0) - offset;
+        try { window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' }); }
+        catch (e) { window.scrollTo(0, Math.max(0, top)); }
+        try { card.focus({ preventScroll: true }); } catch (e) {}
+      };
+      // wait two frames so the layout change (form hidden, card shown) has happened before measuring
+      requestAnimationFrame(function() { requestAnimationFrame(go); });
+    }
+
+    function resetVisitorForm() {
+      ['vis-name', 'vis-phone', 'vis-email', 'vis-notes'].forEach(function(id) {
+        const el = document.getElementById(id); if (el) el.value = '';
+      });
+      const btn = document.getElementById('vis-submit-btn');
+      if (btn) { btn.disabled = false; btn.textContent = 'Complete Visitor Check-In'; btn.classList.remove('opacity-60'); }
+    }
+
     function showScanSuccessScreen(headline, detail, badgeText) {
       state.isCheckingInFriend = false;
       document.getElementById('friend-mode-banner').classList.add('hidden');
       const card = document.getElementById('scan-success-card');
       card.classList.remove('hidden');
+      // The form has done its job: hide it so there is no second "submit" under the thumb, then bring the confirmation into view.
+      const formBox = document.getElementById('scan-form-container');
+      if (formBox) formBox.classList.add('hidden');
+      scrollToScanConfirmation();
       document.getElementById('scan-success-name').textContent = headline;
       document.getElementById('scan-success-detail').textContent = detail;
       const badge = document.getElementById('scan-visit-badge');
@@ -2531,6 +2857,7 @@
       document.getElementById('scan-success-card').classList.add('hidden');
       document.getElementById('friend-mode-banner').classList.remove('hidden');
       document.getElementById('scan-form-container').classList.remove('hidden');
+      resetVisitorForm();
       clearScanSearch();
     }
 
@@ -2538,6 +2865,8 @@
       state.isCheckingInFriend = false;
       document.getElementById('friend-mode-banner').classList.add('hidden');
       document.getElementById('scan-success-card').classList.remove('hidden');
+      document.getElementById('scan-form-container').classList.add('hidden');
+      scrollToScanConfirmation();
     }
 
     function switchDeviceUser() {
@@ -2546,6 +2875,7 @@
       document.getElementById('friend-mode-banner').classList.add('hidden');
       document.getElementById('scan-success-card').classList.add('hidden');
       document.getElementById('scan-form-container').classList.remove('hidden');
+      resetVisitorForm();
       clearScanSearch();
       showToast('Cleared saved phone profile');
     }
