@@ -833,7 +833,7 @@
           <button type="button" onclick="closePromoteModal()"
             class="bg-white/20 hover:bg-white/30 text-white text-[12px] font-semibold px-4 py-2 rounded-full transition">Cancel</button>
           <button type="submit" id="promote-submit"
-            class="bg-[#2f3158] hover:bg-[#262848] active:scale-95 text-white text-[12px] font-bold px-5 py-2 rounded-full shadow transition">Add to Members</button>
+            class="bg-[#BFA15F] hover:bg-[#a98f52] active:scale-95 text-[#232323] text-[12px] font-bold px-5 py-2 rounded-full shadow transition">Add to Members</button>
         </div>
       </form>
     </div>
@@ -2188,7 +2188,7 @@
       if (visitorIsMember(v)) {
         return '<span class="bg-[#5c7c4c]/15 text-[#46663a] text-[10.5px] font-bold px-2.5 py-1 rounded-full whitespace-nowrap">&#10003; Member</span>';
       }
-      return '<button type="button" onclick="openPromoteModal(\'' + listKey + '\',' + idx + ')" class="bg-[#555888] text-white text-[10.5px] font-bold px-3 py-1 rounded-full whitespace-nowrap active:scale-95 transition">Add to Members</button>';
+      return '<button type="button" onclick="openPromoteModal(\'' + listKey + '\',' + idx + ')" class="bg-[#BFA15F] text-[#232323] text-[10.5px] font-bold px-3 py-1 rounded-full whitespace-nowrap active:scale-95 transition">Add to Members</button>';
     }
 
     function setPromoteGender(g) {
